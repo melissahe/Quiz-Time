@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 import Firebase
+import GoogleSignIn
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,8 +21,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //Configuration
         FirebaseApp.configure()
         
+        //Initialize sign-in
+        //Google
+        GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID //The OAuth2 client ID for iOS Applications, for Google sign in
+        GIDSignIn.sharedInstance().delegate = self
+        
         //check if logged in
-            //present one view controller
+            //check facebook login, google login, then currentUser??
+            //present regular view controller
         //if not logged in
             //present log in view controller
         let VC = LoginVC()
@@ -102,5 +109,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 
+}
+
+extension AppDelegate: GIDSignInDelegate {
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        if let error = error {
+            //if user cancels sign in, or is currently not already signed in (from silentSignIn function), etc.
+            print("Error signing in: \(error.localizedDescription)")
+            return
+        }
+        print("signed in successfully")
+        //get credentials - Google Auth Provider constructs Google Sign In Credentials
+            //exchange Google access token for Firebase credential
+        guard let authentication = user.authentication else { return }
+        let credentials = GoogleAuthProvider.credential(withIDToken: authentication.idToken, accessToken: authentication.accessToken)
+        AuthUserService.manager.signIn(withCredentials: credentials)
+    }
+    
+    //when user disconnects from app
+    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
+        if let error = error {
+            print("error disconnecting user: \(error.localizedDescription)")
+            return
+        }
+        //to do stuff
+    }
+    
+    //asks delegate to open a resource identified by a URL
+    //for iOS 9.0 and above
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        return GIDSignIn.sharedInstance().handle(url, sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String, annotation: [:])
+    }
 }
 
