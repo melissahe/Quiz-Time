@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		46C396AFD7D49F9BC6A60DA6 /* Pods_Quiz_Time.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB7B5ED83EE01EED3FF5719C /* Pods_Quiz_Time.framework */; };
+		81389601203B5C9A003D8F2E /* AuthUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81389600203B5C9A003D8F2E /* AuthUserService.swift */; };
+		81389603203B5D0E003D8F2E /* AuthUserServiceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81389602203B5D0E003D8F2E /* AuthUserServiceDelegate.swift */; };
+		81389605203B5DB7003D8F2E /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81389604203B5DB7003D8F2E /* Alert.swift */; };
+		81389607203B7DB8003D8F2E /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81389606203B7DB8003D8F2E /* UIColor+Extension.swift */; };
 		81CF54D520379B31009A4AD7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CF54D420379B31009A4AD7 /* AppDelegate.swift */; };
 		81CF54D720379B31009A4AD7 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CF54D620379B31009A4AD7 /* LoginVC.swift */; };
 		81CF54DD20379B31009A4AD7 /* Quiz_Time.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 81CF54DB20379B31009A4AD7 /* Quiz_Time.xcdatamodeld */; };
@@ -21,6 +25,10 @@
 
 /* Begin PBXFileReference section */
 		57C80766E20132807C3B8998 /* Pods-Quiz-Time.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quiz-Time.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Quiz-Time/Pods-Quiz-Time.debug.xcconfig"; sourceTree = "<group>"; };
+		81389600203B5C9A003D8F2E /* AuthUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthUserService.swift; sourceTree = "<group>"; };
+		81389602203B5D0E003D8F2E /* AuthUserServiceDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthUserServiceDelegate.swift; sourceTree = "<group>"; };
+		81389604203B5DB7003D8F2E /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		81389606203B7DB8003D8F2E /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		81CF54D120379B31009A4AD7 /* Quiz-Time.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Quiz-Time.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81CF54D420379B31009A4AD7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		81CF54D620379B31009A4AD7 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -120,6 +128,8 @@
 		81CF54EE2037B2EB009A4AD7 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				81389600203B5C9A003D8F2E /* AuthUserService.swift */,
+				81389602203B5D0E003D8F2E /* AuthUserServiceDelegate.swift */,
 			);
 			name = Services;
 			path = ..;
@@ -129,6 +139,8 @@
 			isa = PBXGroup;
 			children = (
 				81CF54EE2037B2EB009A4AD7 /* Services */,
+				81389604203B5DB7003D8F2E /* Alert.swift */,
+				81389606203B7DB8003D8F2E /* UIColor+Extension.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -219,15 +231,19 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Quiz-Time/Pods-Quiz-Time-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -260,9 +276,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Quiz-Time/Pods-Quiz-Time-resources.sh",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -276,12 +295,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81389605203B5DB7003D8F2E /* Alert.swift in Sources */,
 				81CF54F72037B396009A4AD7 /* CreateAccountView.swift in Sources */,
 				81CF54D720379B31009A4AD7 /* LoginVC.swift in Sources */,
 				81CF54DD20379B31009A4AD7 /* Quiz_Time.xcdatamodeld in Sources */,
 				81CF54F32037B351009A4AD7 /* CreateAccountVC.swift in Sources */,
 				81CF54F52037B364009A4AD7 /* LoginView.swift in Sources */,
+				81389603203B5D0E003D8F2E /* AuthUserServiceDelegate.swift in Sources */,
+				81389601203B5C9A003D8F2E /* AuthUserService.swift in Sources */,
 				81CF54D520379B31009A4AD7 /* AppDelegate.swift in Sources */,
+				81389607203B7DB8003D8F2E /* UIColor+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
