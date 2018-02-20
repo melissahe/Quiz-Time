@@ -39,6 +39,13 @@ class HomeView: UIView {
         return button
     }()
     
+    lazy var categoryTableView: UITableView = {
+        let tableView = UITableView()
+        tableView.register(CategoryTableViewCell.self, forCellReuseIdentifier: "categoryCell")
+        tableView.isHidden = true
+        return tableView
+    }()
+    
     lazy var quizButton: UIButton = {
         let button = UIButton()
         button.setTitle("Quiz Me!!", for: .normal)
@@ -72,6 +79,7 @@ class HomeView: UIView {
         setUpTitleLabel()
         setUpCategoryLabel()
         setUpCategoryListButton()
+        setUpCategoryTableView()
         setUpQuizButton()
         setUpAddCategoryButton()
     }
@@ -106,6 +114,15 @@ class HomeView: UIView {
         categoryListButton.layer.masksToBounds = true
         categoryListButton.layer.borderWidth = 1.0
         categoryListButton.layer.borderColor = UIColor.lightPurple.cgColor
+    }
+    
+    private func setUpCategoryTableView() {
+        self.addSubview(categoryTableView)
+        
+        categoryTableView.snp.makeConstraints { (make) in
+            make.height.width.equalTo(categoryListButton)
+            make.center.equalTo(categoryListButton)
+        }
     }
     
     private func setUpQuizButton() {
