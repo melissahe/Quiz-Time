@@ -64,9 +64,11 @@ class AuthUserService {
             try auth.signOut()
             print("did sign out")
             completion(true)
+            delegate?.didSignOut(self)
         } catch {
             print("did fail sign out: \(error.localizedDescription)")
             completion(false)
+            delegate?.didFailSignOut(self, errorMessage: error.localizedDescription)
         }
     }
 }

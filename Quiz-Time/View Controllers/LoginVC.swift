@@ -104,6 +104,12 @@ extension LoginVC: AuthUserServiceDelegate {
         let errorAlert = Alert.createErrorAlert(withMessage: "Could not sign in:\n\(errorMessage)", andCompletion: nil)
         self.present(errorAlert, animated: true, completion: nil)
     }
+    func didSignOut(_ authUserService: AuthUserService) {
+        self.currentlyLoggedIn = false
+    }
+    func didFailSignOut(_ authUserService: AuthUserService, errorMessage: String) {
+        print(errorMessage)
+    }
     func noGoogleUserSignedIn() {
         if let _ = AuthUserService.manager.getCurrentUser() {
             self.currentlyLoggedIn = true
