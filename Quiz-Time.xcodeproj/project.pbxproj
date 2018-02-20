@@ -22,6 +22,7 @@
 		810B3C66203BDC66005AAA05 /* QuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810B3C65203BDC66005AAA05 /* QuizView.swift */; };
 		810B3C68203BDC70005AAA05 /* CreateCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810B3C67203BDC70005AAA05 /* CreateCategoryView.swift */; };
 		810B3C6A203BDC7D005AAA05 /* CreateFlashCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810B3C69203BDC7D005AAA05 /* CreateFlashCardView.swift */; };
+		810B3C6C203BFB00005AAA05 /* DatabaseService+Get.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810B3C6B203BFB00005AAA05 /* DatabaseService+Get.swift */; };
 		81389601203B5C9A003D8F2E /* AuthUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81389600203B5C9A003D8F2E /* AuthUserService.swift */; };
 		81389603203B5D0E003D8F2E /* AuthUserServiceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81389602203B5D0E003D8F2E /* AuthUserServiceDelegate.swift */; };
 		81389605203B5DB7003D8F2E /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81389604203B5DB7003D8F2E /* Alert.swift */; };
@@ -53,6 +54,7 @@
 		810B3C65203BDC66005AAA05 /* QuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizView.swift; sourceTree = "<group>"; };
 		810B3C67203BDC70005AAA05 /* CreateCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCategoryView.swift; sourceTree = "<group>"; };
 		810B3C69203BDC7D005AAA05 /* CreateFlashCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateFlashCardView.swift; sourceTree = "<group>"; };
+		810B3C6B203BFB00005AAA05 /* DatabaseService+Get.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DatabaseService+Get.swift"; sourceTree = "<group>"; };
 		81389600203B5C9A003D8F2E /* AuthUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthUserService.swift; sourceTree = "<group>"; };
 		81389602203B5D0E003D8F2E /* AuthUserServiceDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthUserServiceDelegate.swift; sourceTree = "<group>"; };
 		81389604203B5DB7003D8F2E /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 				81389602203B5D0E003D8F2E /* AuthUserServiceDelegate.swift */,
 				810B3C5D203BD641005AAA05 /* DatabaseService.swift */,
 				810B3C5F203BD64B005AAA05 /* DatabaseServiceDelegate.swift */,
+				810B3C6B203BFB00005AAA05 /* DatabaseService+Get.swift */,
 				810B3C61203BD8DA005AAA05 /* DatabaseService+Add.swift */,
 			);
 			name = Services;
@@ -345,6 +348,7 @@
 				810B3C6A203BDC7D005AAA05 /* CreateFlashCardView.swift in Sources */,
 				810B3C5A203BCEE1005AAA05 /* Flashcard.swift in Sources */,
 				81CF54F72037B396009A4AD7 /* CreateAccountView.swift in Sources */,
+				810B3C6C203BFB00005AAA05 /* DatabaseService+Get.swift in Sources */,
 				810B3C50203B99A8005AAA05 /* TabBarController.swift in Sources */,
 				81CF54D720379B31009A4AD7 /* LoginVC.swift in Sources */,
 				81CF54DD20379B31009A4AD7 /* Quiz_Time.xcdatamodeld in Sources */,
