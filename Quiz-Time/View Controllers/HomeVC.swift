@@ -71,8 +71,21 @@ class HomeVC: UIViewController {
     }
     
     @objc private func quizButtonPressed() {
-        //needs dependency injection
-        //check which category is currently selected
+        //check which category is currently selected - then get all flashcards associated
+        
+        guard let categoryName = homeView.categoryListButton.titleLabel?.text else {
+            print("couldn't get category name")
+            return
+        }
+        
+        guard categoryName != "No categories added", categoryName != "Pick A Category" else {
+            let errorAlert = Alert.createErrorAlert(withMessage: "Please pick a valid category!! 😤", andCompletion: nil)
+            self.present(errorAlert, animated: true, completion: nil)
+            return
+        }
+        
+        let quizVC = QuizVC(withCategory: categoryName)
+        self.navigationController?.pushViewController(quizVC, animated: true)
     }
     
     @objc private func addCategoryButtonPressed() {

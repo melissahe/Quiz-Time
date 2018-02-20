@@ -17,6 +17,15 @@ class QuizVC: UIViewController {
         setUpViews()
     }
     
+    init(withCategory categoryName: String) {
+        super.init(nibName: nil, bundle: nil)
+        //to do
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     private func setUpViews() {
         self.view.addSubview(quizView)
     }
