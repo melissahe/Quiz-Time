@@ -32,6 +32,11 @@ class LoginVC: UIViewController {
             self.present(tabBarVC, animated: true, completion: nil)
         }
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        self.view.endEditing(true)
+    }
 
     private func setUpViews() {
         self.view.addSubview(loginView)
@@ -39,6 +44,9 @@ class LoginVC: UIViewController {
         loginView.loginButton.addTarget(self, action: #selector(loginButtonPressed), for: .touchUpInside)
         loginView.createButton.addTarget(self, action: #selector(createButtonPressed), for: .touchUpInside)
         loginView.googleSignInButton.addTarget(self, action: #selector(googleSignInPressed), for: .touchUpInside)
+        
+        loginView.emailTextField.delegate = self
+        loginView.passwordTextField.delegate = self
     }
     
     @objc private func loginButtonPressed() {
@@ -114,6 +122,13 @@ extension LoginVC: AuthUserServiceDelegate {
         if let _ = AuthUserService.manager.getCurrentUser() {
             self.currentlyLoggedIn = true
         }
+    }
+}
+
+extension LoginVC: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }
 
