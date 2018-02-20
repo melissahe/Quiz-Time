@@ -10,6 +10,7 @@ import UIKit
 import CoreData
 import Firebase
 import GoogleSignIn
+import SVProgressHUD
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -26,11 +27,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID //The OAuth2 client ID for iOS Applications, for Google sign in
         GIDSignIn.sharedInstance().delegate = self
         
-        //check if logged in
-            //check facebook login, google login, then currentUser??
-            //present regular view controller
-        //if not logged in
-            //present log in view controller
         let VC = LoginVC()
         
         window = UIWindow(frame: UIScreen.main.bounds)
@@ -116,9 +112,11 @@ extension AppDelegate: GIDSignInDelegate {
         if let error = error {
             //if user cancels sign in, or is currently not already signed in (from silentSignIn function), etc.
             print("Error signing in: \(error.localizedDescription)")
+            AuthUserService.manager.noGoogleUserSignedIn()
             return
         }
         print("signed in successfully")
+        SVProgressHUD.show()
         //get credentials - Google Auth Provider constructs Google Sign In Credentials
             //exchange Google access token for Firebase credential
         guard let authentication = user.authentication else { return }
