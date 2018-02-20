@@ -6,4 +6,27 @@
 //  Copyright © 2018 Melissa He @ C4Q. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class CreateCategoryView: UIView {
+
+    
+    override init(frame: CGRect) {
+        super.init(frame: UIScreen.main.bounds)
+        commonInit()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        commonInit()
+    }
+    
+    private func commonInit() {
+        backgroundColor = .white
+        setUpViews()
+    }
+    
+    private func setUpViews() {
+        
+    }
+}

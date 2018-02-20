@@ -10,9 +10,15 @@ import UIKit
 
 class QuizVC: UIViewController {
 
+    private let quizView = QuizView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setUpViews()
+    }
+    
+    private func setUpViews() {
+        self.view.addSubview(quizView)
     }
 
 }

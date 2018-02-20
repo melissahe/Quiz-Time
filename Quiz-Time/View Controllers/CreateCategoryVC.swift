@@ -9,9 +9,15 @@
 import UIKit
 
 class CreateCategoryVC: UIViewController {
-
+    
+    private let createCategoryView = CreateCategoryView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpViews()
     }
-
+    
+    private func setUpViews() {
+        self.view.addSubview(createCategoryView)
+    }
 }

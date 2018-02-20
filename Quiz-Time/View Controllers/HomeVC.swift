@@ -10,8 +10,14 @@ import UIKit
 
 class HomeVC: UIViewController {
 
+    private let homeView = HomeView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setUpViews()
+    }
+    
+    private func setUpViews() {
+        self.view.addSubview(homeView)
     }
 }
