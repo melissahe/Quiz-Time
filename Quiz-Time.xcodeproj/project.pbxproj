@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		46C396AFD7D49F9BC6A60DA6 /* Pods_Quiz_Time.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB7B5ED83EE01EED3FF5719C /* Pods_Quiz_Time.framework */; };
+		810B3C50203B99A8005AAA05 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810B3C4F203B99A8005AAA05 /* TabBarController.swift */; };
+		810B3C52203B9A99005AAA05 /* QuizVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810B3C51203B9A99005AAA05 /* QuizVC.swift */; };
+		810B3C54203B9AA3005AAA05 /* CreateCategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810B3C53203B9AA3005AAA05 /* CreateCategoryVC.swift */; };
+		810B3C56203B9ABB005AAA05 /* CreateFlashCardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810B3C55203B9ABB005AAA05 /* CreateFlashCardVC.swift */; };
+		810B3C58203B9AD6005AAA05 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810B3C57203B9AD6005AAA05 /* HomeVC.swift */; };
 		81389601203B5C9A003D8F2E /* AuthUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81389600203B5C9A003D8F2E /* AuthUserService.swift */; };
 		81389603203B5D0E003D8F2E /* AuthUserServiceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81389602203B5D0E003D8F2E /* AuthUserServiceDelegate.swift */; };
 		81389605203B5DB7003D8F2E /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81389604203B5DB7003D8F2E /* Alert.swift */; };
@@ -25,6 +30,11 @@
 
 /* Begin PBXFileReference section */
 		57C80766E20132807C3B8998 /* Pods-Quiz-Time.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quiz-Time.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Quiz-Time/Pods-Quiz-Time.debug.xcconfig"; sourceTree = "<group>"; };
+		810B3C4F203B99A8005AAA05 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		810B3C51203B9A99005AAA05 /* QuizVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizVC.swift; sourceTree = "<group>"; };
+		810B3C53203B9AA3005AAA05 /* CreateCategoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCategoryVC.swift; sourceTree = "<group>"; };
+		810B3C55203B9ABB005AAA05 /* CreateFlashCardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateFlashCardVC.swift; sourceTree = "<group>"; };
+		810B3C57203B9AD6005AAA05 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		81389600203B5C9A003D8F2E /* AuthUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthUserService.swift; sourceTree = "<group>"; };
 		81389602203B5D0E003D8F2E /* AuthUserServiceDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthUserServiceDelegate.swift; sourceTree = "<group>"; };
 		81389604203B5DB7003D8F2E /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
@@ -112,6 +122,11 @@
 			children = (
 				81CF54D620379B31009A4AD7 /* LoginVC.swift */,
 				81CF54F22037B351009A4AD7 /* CreateAccountVC.swift */,
+				810B3C4F203B99A8005AAA05 /* TabBarController.swift */,
+				810B3C57203B9AD6005AAA05 /* HomeVC.swift */,
+				810B3C51203B9A99005AAA05 /* QuizVC.swift */,
+				810B3C53203B9AA3005AAA05 /* CreateCategoryVC.swift */,
+				810B3C55203B9ABB005AAA05 /* CreateFlashCardVC.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -296,13 +311,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				81389605203B5DB7003D8F2E /* Alert.swift in Sources */,
+				810B3C52203B9A99005AAA05 /* QuizVC.swift in Sources */,
 				81CF54F72037B396009A4AD7 /* CreateAccountView.swift in Sources */,
+				810B3C50203B99A8005AAA05 /* TabBarController.swift in Sources */,
 				81CF54D720379B31009A4AD7 /* LoginVC.swift in Sources */,
 				81CF54DD20379B31009A4AD7 /* Quiz_Time.xcdatamodeld in Sources */,
+				810B3C58203B9AD6005AAA05 /* HomeVC.swift in Sources */,
 				81CF54F32037B351009A4AD7 /* CreateAccountVC.swift in Sources */,
 				81CF54F52037B364009A4AD7 /* LoginView.swift in Sources */,
+				810B3C54203B9AA3005AAA05 /* CreateCategoryVC.swift in Sources */,
 				81389603203B5D0E003D8F2E /* AuthUserServiceDelegate.swift in Sources */,
 				81389601203B5C9A003D8F2E /* AuthUserService.swift in Sources */,
+				810B3C56203B9ABB005AAA05 /* CreateFlashCardVC.swift in Sources */,
 				81CF54D520379B31009A4AD7 /* AppDelegate.swift in Sources */,
 				81389607203B7DB8003D8F2E /* UIColor+Extension.swift in Sources */,
 			);
