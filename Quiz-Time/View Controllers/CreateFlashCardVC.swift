@@ -7,13 +7,15 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class CreateFlashCardVC: UIViewController {
-    
     private let createFlashCardView = CreateFlashCardView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.title = "Create Flashcard"
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addCardButtonPressed))
         setUpViews()
     }
     
@@ -21,5 +23,7 @@ class CreateFlashCardVC: UIViewController {
         self.view.addSubview(createFlashCardView)
     }
     
-
+    @objc private func addCardButtonPressed() {
+        //to do
+    }
 }
