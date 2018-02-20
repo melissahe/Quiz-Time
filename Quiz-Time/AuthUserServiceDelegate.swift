@@ -12,4 +12,5 @@ import FirebaseAuth
 protocol AuthUserServiceDelegate: class {
     func didSignInWithGoogle(_ authUserService: AuthUserService, user: User)
     func didFailSignInWithGoogle(_ authUserService: AuthUserService, errorMessage: String)
+    func noGoogleUserSignedIn()
 }

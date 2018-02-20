@@ -51,7 +51,22 @@ class AuthUserService {
         }
     }
     
+    public func noGoogleUserSignedIn() {
+        delegate?.noGoogleUserSignedIn()
+    }
+    
     public func getCurrentUser() -> User? {
         return auth.currentUser
+    }
+    
+    public func signOut(completion: @escaping (_ didSignOut: Bool) -> Void) {
+        do {
+            try auth.signOut()
+            print("did sign out")
+            completion(true)
+        } catch {
+            print("did fail sign out: \(error.localizedDescription)")
+            completion(false)
+        }
     }
 }
