@@ -22,6 +22,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //Configuration
         FirebaseApp.configure()
         
+        //Appearance
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor : UIColor.white], for: .normal)
+        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor : UIColor.white]
+        
         //Initialize sign-in
         //Google
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID //The OAuth2 client ID for iOS Applications, for Google sign in

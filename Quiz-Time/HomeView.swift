@@ -144,7 +144,7 @@ class HomeView: UIView {
         self.addSubview(addCategoryButton)
         
         addCategoryButton.snp.makeConstraints { (make) in
-            make.bottom.equalTo(self.safeAreaLayoutGuide.snp.bottom).offset(-40)
+            make.bottom.equalTo(self.safeAreaLayoutGuide.snp.bottom).offset(-150)
             make.centerX.equalTo(quizButton.snp.centerX)
             make.width.equalTo(self).multipliedBy(0.50)
         }
