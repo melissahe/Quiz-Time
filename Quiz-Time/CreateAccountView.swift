@@ -20,7 +20,7 @@ class CreateAccountView: UIView {
     lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Create Account"
-        label.font = UIFont(name: "Chalkduster", size: 48)
+        label.font = UIFont(name: "Chalkduster", size: 40)
         label.textAlignment = .center
         label.numberOfLines = 0
         label.setContentHuggingPriority(UILayoutPriority(249), for: .vertical)
@@ -127,7 +127,7 @@ class CreateAccountView: UIView {
         
         titleLabel.snp.makeConstraints { (make) in
             make.top.equalTo(dismissButton).offset(80)
-            make.leading.trailing.equalTo(self).inset(80)
+            make.leading.trailing.equalTo(self).inset(20)
         }
     }
     
