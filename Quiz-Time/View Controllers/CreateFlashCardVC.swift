@@ -9,10 +9,17 @@
 import UIKit
 
 class CreateFlashCardVC: UIViewController {
-
+    
+    private let createFlashCardView = CreateFlashCardView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setUpViews()
     }
+    
+    private func setUpViews() {
+        self.view.addSubview(createFlashCardView)
+    }
+    
 
 }

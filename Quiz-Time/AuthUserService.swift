@@ -13,7 +13,7 @@ class AuthUserService {
     private init() {
         self.auth = Auth.auth()
     }
-    static let manager = AuthUserService()
+    public static let manager = AuthUserService()
     private let auth: Auth!
     public weak var delegate: AuthUserServiceDelegate?
     
