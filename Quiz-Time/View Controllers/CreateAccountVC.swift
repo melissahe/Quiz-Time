@@ -18,10 +18,17 @@ class CreateAccountVC: UIViewController {
         setUpViews()
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        self.view.endEditing(true)
+    }
+    
     private func setUpViews() {
         self.view.addSubview(createAccountView)
         createAccountView.dismissButton.addTarget(self, action: #selector(dismissButtonPressed), for: .touchUpInside)
         createAccountView.createButton.addTarget(self, action: #selector(createButtonPressed), for: .touchUpInside)
+        createAccountView.emailTextField.delegate = self
+        createAccountView.passwordTextField.delegate = self
     }
     
     @objc private func dismissButtonPressed() {
@@ -56,5 +63,12 @@ class CreateAccountVC: UIViewController {
                 self.present(successAlert, animated: true, completion: nil)
             }
         }
+    }
+}
+
+extension CreateAccountVC: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }
