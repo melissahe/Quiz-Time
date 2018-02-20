@@ -9,16 +9,28 @@
 import UIKit
 import GoogleSignIn
 import FirebaseAuth
+import SVProgressHUD
 
 class LoginVC: UIViewController {
 
     private let loginView = LoginView()
     
+    fileprivate var currentlyLoggedIn = false //should be set back to false when logging out
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        AuthUserService.manager.delegate = self
         GIDSignIn.sharedInstance().uiDelegate = self
         GIDSignIn.sharedInstance().signInSilently()
         setUpViews()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if currentlyLoggedIn {
+            let tabBarVC = TabBarController()
+            self.present(tabBarVC, animated: true, completion: nil)
+        }
     }
 
     private func setUpViews() {
@@ -26,6 +38,7 @@ class LoginVC: UIViewController {
         
         loginView.loginButton.addTarget(self, action: #selector(loginButtonPressed), for: .touchUpInside)
         loginView.createButton.addTarget(self, action: #selector(createButtonPressed), for: .touchUpInside)
+        loginView.googleSignInButton.addTarget(self, action: #selector(googleSignInPressed), for: .touchUpInside)
     }
     
     @objc private func loginButtonPressed() {
@@ -40,15 +53,18 @@ class LoginVC: UIViewController {
             self.present(errorAlert, animated: true, completion: nil)
             return
         }
-        
+        SVProgressHUD.show()
         AuthUserService.manager.delegate = self
-        AuthUserService.manager.signIn(withEmail: emailText, andPassword: passwordText) { (user, error) in
+        AuthUserService.manager.signIn(withEmail: emailText, andPassword: passwordText) { [weak self] (user, error) in
+            SVProgressHUD.dismiss()
+            self?.loginView.passwordTextField.text = nil
             if let error = error {
                 let errorAlert = Alert.createErrorAlert(withMessage: error.localizedDescription, andCompletion: nil)
-                self.present(errorAlert, animated: true, completion: nil)
+                self?.present(errorAlert, animated: true, completion: nil)
             } else if let user = user {
-                //to do - should present the regular view controller
                 print(user)
+                let tabBarVC = TabBarController()
+                self?.present(tabBarVC, animated: true, completion: nil)
             }
         }
     }
@@ -56,6 +72,10 @@ class LoginVC: UIViewController {
     @objc private func createButtonPressed() {
         let createAccountVC = CreateAccountVC()
         self.present(createAccountVC, animated: true, completion: nil)
+    }
+    
+    @objc private func googleSignInPressed() {
+        AuthUserService.manager.delegate = self
     }
 }
 
@@ -73,12 +93,21 @@ extension LoginVC: GIDSignInUIDelegate {
 extension LoginVC: AuthUserServiceDelegate {
     func didSignInWithGoogle(_ authUserService: AuthUserService, user: User) {
         print("did sign in with google")
-        //should launch the regular view controller
+        SVProgressHUD.dismiss()
+        //present tab bar VC
+        let tabBarVC = TabBarController()
+        self.present(tabBarVC, animated: true, completion: nil)
     }
     func didFailSignInWithGoogle(_ authUserService: AuthUserService, errorMessage: String) {
         print("did fail sign in with google: \(errorMessage)")
+        SVProgressHUD.dismiss()
         let errorAlert = Alert.createErrorAlert(withMessage: "Could not sign in:\n\(errorMessage)", andCompletion: nil)
         self.present(errorAlert, animated: true, completion: nil)
+    }
+    func noGoogleUserSignedIn() {
+        if let _ = AuthUserService.manager.getCurrentUser() {
+            self.currentlyLoggedIn = true
+        }
     }
 }
 
