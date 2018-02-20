@@ -23,6 +23,8 @@
 		810B3C68203BDC70005AAA05 /* CreateCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810B3C67203BDC70005AAA05 /* CreateCategoryView.swift */; };
 		810B3C6A203BDC7D005AAA05 /* CreateFlashCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810B3C69203BDC7D005AAA05 /* CreateFlashCardView.swift */; };
 		810B3C6C203BFB00005AAA05 /* DatabaseService+Get.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810B3C6B203BFB00005AAA05 /* DatabaseService+Get.swift */; };
+		810B3C79203C0069005AAA05 /* Quiz_TimeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810B3C78203C0069005AAA05 /* Quiz_TimeUITests.swift */; };
+		810B3C87203C007B005AAA05 /* Quiz_TimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810B3C86203C007B005AAA05 /* Quiz_TimeTests.swift */; };
 		81389601203B5C9A003D8F2E /* AuthUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81389600203B5C9A003D8F2E /* AuthUserService.swift */; };
 		81389603203B5D0E003D8F2E /* AuthUserServiceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81389602203B5D0E003D8F2E /* AuthUserServiceDelegate.swift */; };
 		81389605203B5DB7003D8F2E /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81389604203B5DB7003D8F2E /* Alert.swift */; };
@@ -37,6 +39,23 @@
 		81CF54F52037B364009A4AD7 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CF54F42037B364009A4AD7 /* LoginView.swift */; };
 		81CF54F72037B396009A4AD7 /* CreateAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CF54F62037B396009A4AD7 /* CreateAccountView.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		810B3C7B203C0069005AAA05 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 81CF54C920379B31009A4AD7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 81CF54D020379B31009A4AD7;
+			remoteInfo = "Quiz-Time";
+		};
+		810B3C89203C007B005AAA05 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 81CF54C920379B31009A4AD7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 81CF54D020379B31009A4AD7;
+			remoteInfo = "Quiz-Time";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		57C80766E20132807C3B8998 /* Pods-Quiz-Time.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quiz-Time.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Quiz-Time/Pods-Quiz-Time.debug.xcconfig"; sourceTree = "<group>"; };
@@ -55,6 +74,12 @@
 		810B3C67203BDC70005AAA05 /* CreateCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCategoryView.swift; sourceTree = "<group>"; };
 		810B3C69203BDC7D005AAA05 /* CreateFlashCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateFlashCardView.swift; sourceTree = "<group>"; };
 		810B3C6B203BFB00005AAA05 /* DatabaseService+Get.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DatabaseService+Get.swift"; sourceTree = "<group>"; };
+		810B3C76203C0069005AAA05 /* Quiz-TimeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Quiz-TimeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		810B3C78203C0069005AAA05 /* Quiz_TimeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quiz_TimeUITests.swift; sourceTree = "<group>"; };
+		810B3C7A203C0069005AAA05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		810B3C84203C007B005AAA05 /* Quiz-TimeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Quiz-TimeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		810B3C86203C007B005AAA05 /* Quiz_TimeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quiz_TimeTests.swift; sourceTree = "<group>"; };
+		810B3C88203C007B005AAA05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		81389600203B5C9A003D8F2E /* AuthUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthUserService.swift; sourceTree = "<group>"; };
 		81389602203B5D0E003D8F2E /* AuthUserServiceDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthUserServiceDelegate.swift; sourceTree = "<group>"; };
 		81389604203B5DB7003D8F2E /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
@@ -75,6 +100,20 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		810B3C73203C0069005AAA05 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		810B3C81203C007B005AAA05 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		81CF54CE20379B31009A4AD7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -95,10 +134,30 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		810B3C77203C0069005AAA05 /* Quiz-TimeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				810B3C78203C0069005AAA05 /* Quiz_TimeUITests.swift */,
+				810B3C7A203C0069005AAA05 /* Info.plist */,
+			);
+			path = "Quiz-TimeUITests";
+			sourceTree = "<group>";
+		};
+		810B3C85203C007B005AAA05 /* Quiz-TimeTests */ = {
+			isa = PBXGroup;
+			children = (
+				810B3C86203C007B005AAA05 /* Quiz_TimeTests.swift */,
+				810B3C88203C007B005AAA05 /* Info.plist */,
+			);
+			path = "Quiz-TimeTests";
+			sourceTree = "<group>";
+		};
 		81CF54C820379B31009A4AD7 = {
 			isa = PBXGroup;
 			children = (
 				81CF54D320379B31009A4AD7 /* Quiz-Time */,
+				810B3C77203C0069005AAA05 /* Quiz-TimeUITests */,
+				810B3C85203C007B005AAA05 /* Quiz-TimeTests */,
 				81CF54D220379B31009A4AD7 /* Products */,
 				34C173C0C7DC3D77CD4B719A /* Pods */,
 				9272C67425822CD4750B50FE /* Frameworks */,
@@ -109,6 +168,8 @@
 			isa = PBXGroup;
 			children = (
 				81CF54D120379B31009A4AD7 /* Quiz-Time.app */,
+				810B3C76203C0069005AAA05 /* Quiz-TimeUITests.xctest */,
+				810B3C84203C007B005AAA05 /* Quiz-TimeTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -201,6 +262,42 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		810B3C75203C0069005AAA05 /* Quiz-TimeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 810B3C7D203C0069005AAA05 /* Build configuration list for PBXNativeTarget "Quiz-TimeUITests" */;
+			buildPhases = (
+				810B3C72203C0069005AAA05 /* Sources */,
+				810B3C73203C0069005AAA05 /* Frameworks */,
+				810B3C74203C0069005AAA05 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				810B3C7C203C0069005AAA05 /* PBXTargetDependency */,
+			);
+			name = "Quiz-TimeUITests";
+			productName = "Quiz-TimeUITests";
+			productReference = 810B3C76203C0069005AAA05 /* Quiz-TimeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		810B3C83203C007B005AAA05 /* Quiz-TimeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 810B3C8B203C007B005AAA05 /* Build configuration list for PBXNativeTarget "Quiz-TimeTests" */;
+			buildPhases = (
+				810B3C80203C007B005AAA05 /* Sources */,
+				810B3C81203C007B005AAA05 /* Frameworks */,
+				810B3C82203C007B005AAA05 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				810B3C8A203C007B005AAA05 /* PBXTargetDependency */,
+			);
+			name = "Quiz-TimeTests";
+			productName = "Quiz-TimeTests";
+			productReference = 810B3C84203C007B005AAA05 /* Quiz-TimeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		81CF54D020379B31009A4AD7 /* Quiz-Time */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 81CF54E620379B31009A4AD7 /* Build configuration list for PBXNativeTarget "Quiz-Time" */;
@@ -231,6 +328,16 @@
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = "Melissa He @ C4Q";
 				TargetAttributes = {
+					810B3C75203C0069005AAA05 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 81CF54D020379B31009A4AD7;
+					};
+					810B3C83203C007B005AAA05 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 81CF54D020379B31009A4AD7;
+					};
 					81CF54D020379B31009A4AD7 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
@@ -251,11 +358,27 @@
 			projectRoot = "";
 			targets = (
 				81CF54D020379B31009A4AD7 /* Quiz-Time */,
+				810B3C75203C0069005AAA05 /* Quiz-TimeUITests */,
+				810B3C83203C007B005AAA05 /* Quiz-TimeTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		810B3C74203C0069005AAA05 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		810B3C82203C007B005AAA05 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		81CF54CF20379B31009A4AD7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -338,6 +461,22 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		810B3C72203C0069005AAA05 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				810B3C79203C0069005AAA05 /* Quiz_TimeUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		810B3C80203C007B005AAA05 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				810B3C87203C007B005AAA05 /* Quiz_TimeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		81CF54CD20379B31009A4AD7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -372,6 +511,19 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		810B3C7C203C0069005AAA05 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 81CF54D020379B31009A4AD7 /* Quiz-Time */;
+			targetProxy = 810B3C7B203C0069005AAA05 /* PBXContainerItemProxy */;
+		};
+		810B3C8A203C007B005AAA05 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 81CF54D020379B31009A4AD7 /* Quiz-Time */;
+			targetProxy = 810B3C89203C007B005AAA05 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		81CF54E020379B31009A4AD7 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -384,6 +536,68 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		810B3C7E203C0069005AAA05 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M6644XK36Y;
+				INFOPLIST_FILE = "Quiz-TimeUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Melissa-He.Quiz-TimeUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Quiz-Time";
+			};
+			name = Debug;
+		};
+		810B3C7F203C0069005AAA05 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M6644XK36Y;
+				INFOPLIST_FILE = "Quiz-TimeUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Melissa-He.Quiz-TimeUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Quiz-Time";
+			};
+			name = Release;
+		};
+		810B3C8C203C007B005AAA05 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M6644XK36Y;
+				INFOPLIST_FILE = "Quiz-TimeTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Melissa-He.Quiz-TimeTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Quiz-Time.app/Quiz-Time";
+			};
+			name = Debug;
+		};
+		810B3C8D203C007B005AAA05 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M6644XK36Y;
+				INFOPLIST_FILE = "Quiz-TimeTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Melissa-He.Quiz-TimeTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Quiz-Time.app/Quiz-Time";
+			};
+			name = Release;
+		};
 		81CF54E420379B31009A4AD7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -526,6 +740,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		810B3C7D203C0069005AAA05 /* Build configuration list for PBXNativeTarget "Quiz-TimeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				810B3C7E203C0069005AAA05 /* Debug */,
+				810B3C7F203C0069005AAA05 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		810B3C8B203C007B005AAA05 /* Build configuration list for PBXNativeTarget "Quiz-TimeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				810B3C8C203C007B005AAA05 /* Debug */,
+				810B3C8D203C007B005AAA05 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		81CF54CC20379B31009A4AD7 /* Build configuration list for PBXProject "Quiz-Time" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
