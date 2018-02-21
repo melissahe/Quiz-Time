@@ -30,6 +30,7 @@
 		81389603203B5D0E003D8F2E /* AuthUserServiceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81389602203B5D0E003D8F2E /* AuthUserServiceDelegate.swift */; };
 		81389605203B5DB7003D8F2E /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81389604203B5DB7003D8F2E /* Alert.swift */; };
 		81389607203B7DB8003D8F2E /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81389606203B7DB8003D8F2E /* UIColor+Extension.swift */; };
+		81C3C104203E2AB400A92289 /* CreateFlashCardVC+DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C3C103203E2AB400A92289 /* CreateFlashCardVC+DatabaseService.swift */; };
 		81CF54D520379B31009A4AD7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CF54D420379B31009A4AD7 /* AppDelegate.swift */; };
 		81CF54D720379B31009A4AD7 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CF54D620379B31009A4AD7 /* LoginVC.swift */; };
 		81CF54DD20379B31009A4AD7 /* Quiz_Time.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 81CF54DB20379B31009A4AD7 /* Quiz_Time.xcdatamodeld */; };
@@ -86,6 +87,7 @@
 		81389602203B5D0E003D8F2E /* AuthUserServiceDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthUserServiceDelegate.swift; sourceTree = "<group>"; };
 		81389604203B5DB7003D8F2E /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		81389606203B7DB8003D8F2E /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		81C3C103203E2AB400A92289 /* CreateFlashCardVC+DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CreateFlashCardVC+DatabaseService.swift"; sourceTree = "<group>"; };
 		81CF54D120379B31009A4AD7 /* Quiz-Time.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Quiz-Time.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81CF54D420379B31009A4AD7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		81CF54D620379B31009A4AD7 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 				810B3C51203B9A99005AAA05 /* QuizVC.swift */,
 				810B3C53203B9AA3005AAA05 /* CreateCategoryVC.swift */,
 				810B3C55203B9ABB005AAA05 /* CreateFlashCardVC.swift */,
+				81C3C103203E2AB400A92289 /* CreateFlashCardVC+DatabaseService.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -489,6 +492,7 @@
 				810B3C52203B9A99005AAA05 /* QuizVC.swift in Sources */,
 				810B3C6A203BDC7D005AAA05 /* CreateFlashCardView.swift in Sources */,
 				810B3C5A203BCEE1005AAA05 /* Flashcard.swift in Sources */,
+				81C3C104203E2AB400A92289 /* CreateFlashCardVC+DatabaseService.swift in Sources */,
 				81CF54F72037B396009A4AD7 /* CreateAccountView.swift in Sources */,
 				810B3C6C203BFB00005AAA05 /* DatabaseService+Get.swift in Sources */,
 				810B3C50203B99A8005AAA05 /* TabBarController.swift in Sources */,

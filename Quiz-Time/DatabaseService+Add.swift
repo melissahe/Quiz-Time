@@ -23,9 +23,8 @@ extension DatabaseService {
         }
     }
     public func addCategory(_ category: Category) {
-        var category = category
-        let categoryRef = categoriesRef.child(category.userID).childByAutoId()
-        category.categoryID = categoriesRef.key
+        let category = category
+        let categoryRef = categoriesRef.child(category.userID).child(category.name)
         let categoryJSON = category.toJSON()
         categoryRef.setValue(categoryJSON) { (error, _) in
             if let error = error {
