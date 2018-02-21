@@ -11,7 +11,6 @@ import Foundation
 struct Category: Codable, Equatable {
     
     let name: String
-    var categoryID: String = "tbd"
     let userID: String
     
     init(name: String, userID: String) {
@@ -28,16 +27,11 @@ struct Category: Codable, Equatable {
             print("couldn't get name")
             return nil
         }
-        guard let categoryID = categoryDict["categoryID"] as? String else {
-            print("couldn't get categoryID")
-            return nil
-        }
         guard let userID = categoryDict["userID"] as? String else {
             print("couldn't get userID")
             return nil
         }
         self.name = name
-        self.categoryID = categoryID
         self.userID = userID
     }
     
