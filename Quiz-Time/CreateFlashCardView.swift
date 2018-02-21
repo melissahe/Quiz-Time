@@ -97,6 +97,7 @@ class CreateFlashCardView: UIScrollView {
     
     private func commonInit() {
         backgroundColor = .white
+        self.delaysContentTouches = false
         setUpViews()
     }
 
