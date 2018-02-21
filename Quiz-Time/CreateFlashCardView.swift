@@ -18,12 +18,37 @@ class CreateFlashCardView: UIScrollView {
     lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Add A Flashcard"
-        label.font = UIFont(name: "Chalkduster", size: 32)
+        label.font = UIFont(name: "Chalkduster", size: 30)
         label.textAlignment = .center
         label.numberOfLines = 0
         label.setContentHuggingPriority(UILayoutPriority(249), for: .vertical)
         label.textColor = UIColor.lightPurple
         return label
+    }()
+    
+    lazy var categoryLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Category:"
+        label.textColor = .lightPurple
+        label.font = UIFont(name: "Chalkduster", size: 20)
+        label.setContentHuggingPriority(UILayoutPriority(252), for: .horizontal)
+        label.setContentCompressionResistancePriority(UILayoutPriority(1000), for: .horizontal)
+        return label
+    }()
+    
+    lazy var categoryListButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Pick A Category", for: .normal)
+        button.setTitleColor(UIColor.buttonBlue, for: .normal)
+        button.setContentHuggingPriority(UILayoutPriority(249), for: .horizontal)
+        return button
+    }()
+    
+    lazy var categoryTableView: UITableView = {
+        let tableView = UITableView()
+        tableView.register(CategoryTableViewCell.self, forCellReuseIdentifier: "categoryCell")
+        tableView.isHidden = true
+        return tableView
     }()
     
     lazy var questionLabel: UILabel = {
@@ -78,6 +103,9 @@ class CreateFlashCardView: UIScrollView {
     private func setUpViews() {
         setUpContentView()
         setUpTitleLabel()
+        setUpCategoryLabel()
+        setUpCategoryListButton()
+        setUpCategoryTableView()
         setUpQuestionLabel()
         setUpQuestionTextField()
         setUpAnswerLabel()
@@ -97,8 +125,40 @@ class CreateFlashCardView: UIScrollView {
         contentView.addSubview(titleLabel)
         
         titleLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(contentView.safeAreaLayoutGuide.snp.top).offset(40)
+            make.top.equalTo(contentView.safeAreaLayoutGuide.snp.top).offset(20)
             make.leading.trailing.equalTo(contentView).inset(40)
+        }
+    }
+    
+    private func setUpCategoryLabel() {
+        contentView.addSubview(categoryLabel)
+        
+        categoryLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(titleLabel.snp.bottom).offset(20)
+            make.leading.equalTo(contentView).offset(20)
+        }
+    }
+    
+    private func setUpCategoryListButton() {
+        contentView.addSubview(categoryListButton)
+        
+        categoryListButton.snp.makeConstraints { (make) in
+            make.leading.equalTo(categoryLabel.snp.trailing).offset(5)
+            make.centerY.equalTo(categoryLabel.snp.centerY)
+            make.trailing.equalTo(contentView).offset(-20)
+        }
+        
+        categoryListButton.layer.masksToBounds = true
+        categoryListButton.layer.borderWidth = 1.0
+        categoryListButton.layer.borderColor = UIColor.lightPurple.cgColor
+    }
+    
+    private func setUpCategoryTableView() {
+        contentView.addSubview(categoryTableView)
+        
+        categoryTableView.snp.makeConstraints { (make) in
+            make.height.width.equalTo(categoryListButton)
+            make.center.equalTo(categoryListButton)
         }
     }
     
@@ -106,7 +166,7 @@ class CreateFlashCardView: UIScrollView {
         contentView.addSubview(questionLabel)
         
         questionLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(titleLabel.snp.bottom).offset(40)
+            make.top.equalTo(categoryLabel.snp.bottom).offset(10)
             make.leading.equalTo(contentView).offset(20)
         }
     }

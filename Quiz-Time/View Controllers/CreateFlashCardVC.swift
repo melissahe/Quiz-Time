@@ -19,17 +19,24 @@ class CreateFlashCardVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpNotifications()
+        setUpNavigation()
+        setUpViews()
+        setUpGestures()
+    }
+    
+    private func setUpNotifications() {
         self.notificationCenter = NotificationCenter.default
         
         notificationCenter.addObserver(self, selector: #selector(keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         
         notificationCenter.addObserver(self, selector: #selector(keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
-        
+    }
+    
+    private func setUpNavigation() {
         self.navigationItem.title = "Create Flashcard"
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addCardButtonPressed))
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(resetButtonPressed))
-        setUpViews()
-        setUpGestures()
     }
     
     private func setUpViews() {
@@ -39,6 +46,8 @@ class CreateFlashCardVC: UIViewController {
             make.edges.equalTo(self.view)
             make.center.equalTo(self.view.snp.center)
         }
+        
+        createFlashCardView.questionTextField.delegate = self
     }
     
     private func setUpGestures() {
@@ -94,6 +103,13 @@ class CreateFlashCardVC: UIViewController {
     }
     
     @objc private func resetButtonPressed() {
-        //to do
+        
+    }
+}
+
+extension CreateFlashCardVC: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }
