@@ -113,16 +113,12 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "categoryCell", for: indexPath) as! CategoryTableViewCell
-        
         if categories.isEmpty {
-            
             cell.categoryTitleLabel.text = "No categories added"
-            
             return cell
         }
         
         let currentCategory = categories[indexPath.row]
-        
         cell.categoryTitleLabel.text = currentCategory.name
         
         return cell
