@@ -8,12 +8,23 @@
 
 import UIKit
 import SVProgressHUD
+import NotificationCenter
 
 class CreateFlashCardVC: UIViewController {
     private let createFlashCardView = CreateFlashCardView()
     
+    private var notificationCenter: NotificationCenter!
+    
+    private var keyboardIsShown = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.notificationCenter = NotificationCenter.default
+        
+        notificationCenter.addObserver(self, selector: #selector(keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        
+        notificationCenter.addObserver(self, selector: #selector(keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        
         self.navigationItem.title = "Create Flashcard"
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addCardButtonPressed))
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(resetButtonPressed))
@@ -38,6 +49,44 @@ class CreateFlashCardVC: UIViewController {
     
     @objc private func scrollViewTapped() {
         self.view.endEditing(true)
+    }
+    
+    @objc private func keyboardWillShow(sender: Notification) {
+        guard let userInfo = sender.userInfo, let keyboardRect = userInfo[UIKeyboardFrameEndUserInfoKey] as? CGRect else {
+            print("couldn't get keyboard rect")
+            return
+        }
+
+        if keyboardIsShown {
+            return
+        }
+        
+        print(keyboardRect)
+        
+        let keyboardSize = keyboardRect.size
+        let contentInset = createFlashCardView.contentInset
+        
+        createFlashCardView.contentInset = UIEdgeInsets(top: contentInset.top, left: contentInset.left, bottom: contentInset.bottom + keyboardSize.height, right: contentInset.right)
+        createFlashCardView.scrollIndicatorInsets = createFlashCardView.contentInset
+        createFlashCardView.setContentOffset(CGPoint(x: 0, y: keyboardSize.height / 2), animated: true)
+        
+        keyboardIsShown = true
+    }
+    
+    @objc private func keyboardWillHide(sender: Notification) {
+        guard let userInfo = sender.userInfo, let keyboardRect = userInfo[UIKeyboardFrameEndUserInfoKey] as? CGRect else {
+            print("couldn't get keyboard rect")
+            return
+        }
+        
+        print(keyboardRect)
+        
+        let keyboardSize = keyboardRect.size
+        let contentInset = createFlashCardView.contentInset
+        
+        createFlashCardView.contentInset = UIEdgeInsets(top: contentInset.top, left: contentInset.left, bottom: contentInset.bottom - keyboardSize.height, right: contentInset.right)
+        createFlashCardView.scrollIndicatorInsets = createFlashCardView.contentInset
+        keyboardIsShown = false
     }
     
     @objc private func addCardButtonPressed() {
