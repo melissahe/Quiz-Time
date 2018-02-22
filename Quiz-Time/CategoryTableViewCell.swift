@@ -10,7 +10,7 @@ import UIKit
 
 class CategoryTableViewCell: UITableViewCell {
     
-    lazy var categoryTitleLabel: UILabel = {
+    public lazy var categoryTitleLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
         label.textColor = UIColor.buttonBlue
