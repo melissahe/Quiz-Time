@@ -39,6 +39,8 @@ class QuizVC: UIViewController {
         }
     }
     
+    private var currentRow: Int = 0
+    
     init(withCategory categoryName: String) {
         self.categoryName = categoryName
         super.init(nibName: nil, bundle: nil)
@@ -102,6 +104,15 @@ class QuizVC: UIViewController {
 extension QuizVC: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         //to do - animate flip, switch to answer or question
+        let currentFlashcard = flashcards[indexPath.row]
+        let cell = collectionView.cellForItem(at: indexPath)
+        
+    }
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        currentRow = indexPath.row
+    }
+    func collectionView(_ collectionView: UICollectionView, shouldSpringLoadItemAt indexPath: IndexPath, with context: UISpringLoadedInteractionContext) -> Bool {
+        return true
     }
 }
 
@@ -126,12 +137,14 @@ extension QuizVC: UICollectionViewDelegateFlowLayout {
 
 extension QuizVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1 //to do - fix
+        return flashcards.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cardCell", for: indexPath) as! CardCollectionViewCell
+        let currentFlashcard = flashcards[indexPath.row]
         
-        cell.textLabel.text = "test!!!1"
+        cell.textLabel.text = currentFlashcard.question
+        cell.pageLabel.text = indexPath.row.description
         
         return cell
     }
