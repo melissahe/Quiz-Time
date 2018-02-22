@@ -28,7 +28,10 @@ class CategoryTableViewCell: UITableViewCell {
     }
 
     private func commonInit() {
-        backgroundColor = .white
+        self.contentView.backgroundColor = .white
+        self.contentView.layer.masksToBounds = true
+        self.contentView.layer.borderWidth = 1
+        self.contentView.layer.borderColor = UIColor.lightPurple.cgColor
         setUpViews()
     }
     
