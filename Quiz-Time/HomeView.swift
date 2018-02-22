@@ -10,7 +10,7 @@ import UIKit
 
 class HomeView: UIView {
     
-    lazy var titleLabel: UILabel = {
+    public lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Pick a category!"
         label.font = UIFont(name: "Chalkduster", size: 32)
@@ -21,7 +21,7 @@ class HomeView: UIView {
         return label
     }()
     
-    lazy var categoryLabel: UILabel = {
+    public lazy var categoryLabel: UILabel = {
         let label = UILabel()
         label.text = "Category:"
         label.font = UIFont(name: "Chalkduster", size: 20)
@@ -31,7 +31,7 @@ class HomeView: UIView {
         return label
     }()
     
-    lazy var categoryListButton: UIButton = {
+    public lazy var categoryListButton: UIButton = {
         let button = UIButton()
         button.setTitle("Pick A Category", for: .normal)
         button.setTitleColor(UIColor.buttonBlue, for: .normal)
@@ -39,7 +39,7 @@ class HomeView: UIView {
         return button
     }()
     
-    lazy var categoryTableView: UITableView = {
+    public lazy var categoryTableView: UITableView = {
         let tableView = UITableView()
         tableView.register(CategoryTableViewCell.self, forCellReuseIdentifier: "categoryCell")
         tableView.isHidden = true
@@ -47,14 +47,14 @@ class HomeView: UIView {
         return tableView
     }()
     
-    lazy var quizButton: UIButton = {
+    public lazy var quizButton: UIButton = {
         let button = UIButton()
         button.setTitle("Quiz Me!!", for: .normal)
         button.setTitleColor(UIColor.buttonBlue, for: .normal)
         return button
     }()
     
-    lazy var addCategoryButton: UIButton = {
+    public lazy var addCategoryButton: UIButton = {
         let button = UIButton()
         button.setTitle("Add A Category", for: .normal)
         button.setTitleColor(UIColor.buttonBlue, for: .normal)
