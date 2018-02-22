@@ -89,7 +89,7 @@ class HomeVC: UIViewController {
     }
     
     @objc private func addCategoryButtonPressed() {
-        let createCategoryVC = CreateCategoryVC()
+        let createCategoryVC = CreateCategoryVC(categories: self.categories)
         let navVC = UINavigationController(rootViewController: createCategoryVC)
         self.present(navVC, animated: true, completion: nil)
     }
