@@ -42,7 +42,7 @@ class CreateFlashCardVC: UIViewController {
             }
         }
     }
-    
+
     private func setUpNotifications() {
         self.notificationCenter = NotificationCenter.default
         
@@ -79,7 +79,6 @@ class CreateFlashCardVC: UIViewController {
     
     @objc private func scrollViewTapped() {
         self.view.endEditing(true)
-        createFlashCardView.categoryTableView.isHidden = true
     }
     
     @objc private func categoryListButtonPressed() {
