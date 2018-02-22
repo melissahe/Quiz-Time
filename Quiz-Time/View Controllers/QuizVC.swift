@@ -10,8 +10,6 @@ import UIKit
 import SVProgressHUD
 
 class QuizVC: UIViewController {
-    private let cellSpacing = UIScreen.main.bounds.width * 0.05
-    
     private let quizView = QuizView()
     private var categoryName: String!
     private var databaseService = DatabaseService()
@@ -36,6 +34,7 @@ class QuizVC: UIViewController {
                 self.present(alert, animated: true, completion: nil)
                 return
             }
+            quizView.cardCollectionView.reloadData()
         }
     }
     
@@ -84,20 +83,66 @@ class QuizVC: UIViewController {
         quizView.rightButton.addTarget(self, action: #selector(rightButtonPressed), for: .touchUpInside)
     }
     
+    private func disableButtons() {
+        quizView.wrongButton.isEnabled = false
+        quizView.wrongButton.isSelected = true
+        quizView.rightButton.isEnabled = false
+        quizView.rightButton.isSelected = true
+    }
+    
+    private func enableButtons() {
+        quizView.wrongButton.isEnabled = true
+        quizView.wrongButton.isSelected = false
+        quizView.rightButton.isEnabled = true
+        quizView.rightButton.isSelected = false
+    }
+    
+    private func allFlashcardsUsed() -> Bool {
+        for flashcard in flashcards {
+            if flashcard.score == .unanswered {
+                return false
+            }
+        }
+        return true
+    }
+    
+    private func presentFinishAlert() {
+        let scorePercent = (Double(score) / Double(flashcards.count)) * 100
+        let roundedPercentString = String.init(format: "%.2f", scorePercent)
+        let finishAlert = Alert.createAlert(withTitle: "Quiz Over!!!!! LOL", andMessage: "Your score was \(score)/\(flashcards.count)...\nThat's \(roundedPercentString)% 😂")
+        Alert.addAction(withTitle: "Lol okay 😂", style: .default, andCompletion: { [weak self] (_) in
+            self?.navigationController?.popToRootViewController(animated: true)
+        }, toAlertController: finishAlert)
+        self.present(finishAlert, animated: true, completion: nil)
+    }
+    
+    private func moveToNextCell() {
+//        if possible, move to the next flashcard
+        if let currentCell = quizView.cardCollectionView.visibleCells.first, let indexPath = quizView.cardCollectionView.indexPath(for: currentCell) {
+            flashcards[indexPath.row].score = .answered
+            if indexPath.row == flashcards.count - 1 {
+                return
+            }
+            let nextIndexPath = IndexPath(row: indexPath.row + 1, section: indexPath.section)
+            quizView.cardCollectionView.scrollToItem(at: nextIndexPath, at: .centeredHorizontally, animated: true)
+        }
+    }
+    
+    private func buttonPressed() {
+        disableButtons()
+        moveToNextCell()
+        if allFlashcardsUsed() {
+            presentFinishAlert()
+        }
+    }
+    
     @objc private func wrongButtonPressed() {
-        //disable self
-        //if possible, move to the next flashcard
-        //then re-enable
-        //if not possible = last card - calculate score
-            //get score from array of flashcards!
+        buttonPressed()
     }
     
     @objc private func rightButtonPressed() {
-        //disable self
-        //if possible, move to the next flashcard
-        //then re-enable
         score += 1
-        //if not possible = last card - calculate score
+        buttonPressed()
     }
 }
 
@@ -110,28 +155,30 @@ extension QuizVC: UICollectionViewDelegate {
     }
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         currentRow = indexPath.row
-    }
-    func collectionView(_ collectionView: UICollectionView, shouldSpringLoadItemAt indexPath: IndexPath, with context: UISpringLoadedInteractionContext) -> Bool {
-        return true
+        let currentFlashcard = flashcards[indexPath.row]
+        switch currentFlashcard.score {
+        case .answered:
+            disableButtons()
+        case .unanswered:
+            enableButtons()
+        }
     }
 }
 
 extension QuizVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let numberOfCells: CGFloat = 1
-        let numberOfSpaces: CGFloat = numberOfCells + 1
-        let width = (collectionView.frame.width - (numberOfSpaces * cellSpacing)) / numberOfCells
-        let height = collectionView.frame.height - (2 * cellSpacing)
+        let width = collectionView.frame.width
+        let height = collectionView.frame.height
         return CGSize(width: width, height: height)
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return cellSpacing
+        return 0
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return cellSpacing
+        return 0
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: cellSpacing, left: cellSpacing, bottom: cellSpacing, right: cellSpacing)
+        return UIEdgeInsets.zero
     }
 }
 
@@ -144,7 +191,7 @@ extension QuizVC: UICollectionViewDataSource {
         let currentFlashcard = flashcards[indexPath.row]
         
         cell.textLabel.text = currentFlashcard.question
-        cell.pageLabel.text = indexPath.row.description
+        cell.pageLabel.text = (indexPath.row + 1).description
         
         return cell
     }
