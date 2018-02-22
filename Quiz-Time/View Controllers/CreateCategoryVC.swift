@@ -24,18 +24,7 @@ class CreateCategoryVC: UIViewController {
     }
     
     init(categories: [Category]) {
-        if categories.isEmpty {
-            databaseService.getAllCategories(fromUserID: currentUserID, completion: { [weak self] (categories) in
-                if let categories = categories {
-                    self?.categories = categories
-                } else {
-                    let errorAlert = Alert.createErrorAlert(withMessage: "Couldn't load the categories!!", andCompletion: nil)
-                    self?.present(errorAlert, animated: true, completion: nil)
-                }
-            })
-        } else {
-            self.categories = categories
-        }
+        self.categories = categories
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -45,6 +34,16 @@ class CreateCategoryVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if categories.isEmpty {
+            databaseService.getAllCategories(fromUserID: currentUserID, completion: { [weak self] (categories) in
+                if let categories = categories {
+                    self?.categories = categories
+                } else {
+                    let errorAlert = Alert.createErrorAlert(withMessage: "Couldn't load the categories!!", andCompletion: nil)
+                    self?.present(errorAlert, animated: true, completion: nil)
+                }
+            })
+        }
         setUpViews()
         setUpNavigation()
     }
