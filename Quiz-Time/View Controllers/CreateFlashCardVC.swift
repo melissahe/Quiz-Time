@@ -11,7 +11,7 @@ import SVProgressHUD
 import NotificationCenter
 
 class CreateFlashCardVC: UIViewController {
-    private let createFlashCardView = CreateFlashCardView()
+    public let createFlashCardView = CreateFlashCardView()
     private var notificationCenter: NotificationCenter!
     private var keyboardIsShown = false
     private var categories: [Category] = [] {

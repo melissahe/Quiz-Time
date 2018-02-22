@@ -12,7 +12,10 @@ import SVProgressHUD
 extension CreateFlashCardVC: DatabaseServiceDelegate {
     func didAddFlashcard(_ databaseService: DatabaseService) {
         SVProgressHUD.dismiss()
-        let successAlert = Alert.createSuccessAlert(withMessage: "Added a flashcard!!!", andCompletion: nil)
+        let successAlert = Alert.createSuccessAlert(withMessage: "Added a flashcard!!!", andCompletion: { [weak self] _ in
+            self?.createFlashCardView.questionTextField.text = nil
+            self?.createFlashCardView.answerTextView.text = nil
+        })
         self.present(successAlert, animated: true, completion: nil)
     }
     func didFailAddingFlashcard(_ databaseService: DatabaseService, errorMessage: String) {
