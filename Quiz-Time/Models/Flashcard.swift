@@ -13,6 +13,7 @@ struct Flashcard: Codable {
     let answer: String
     let category: String
     var flashcardID: String = "tbd"
+    var score: Int = 0
     let userID: String
     var timestamp: Double = Date.timeIntervalSinceReferenceDate
     
