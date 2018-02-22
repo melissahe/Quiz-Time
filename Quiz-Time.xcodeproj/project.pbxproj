@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		35D950D01E1C12B065B57682 /* libPods-Quiz-TimeTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D1C99EF860007720E3A568D /* libPods-Quiz-TimeTests.a */; };
 		46C396AFD7D49F9BC6A60DA6 /* Pods_Quiz_Time.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB7B5ED83EE01EED3FF5719C /* Pods_Quiz_Time.framework */; };
+		7F241B3DB0039B1F94DC207D /* libPods-Quiz-TimeUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 508104F7EDDCE49952002E09 /* libPods-Quiz-TimeUITests.a */; };
 		810B3C50203B99A8005AAA05 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810B3C4F203B99A8005AAA05 /* TabBarController.swift */; };
 		810B3C52203B9A99005AAA05 /* QuizVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810B3C51203B9A99005AAA05 /* QuizVC.swift */; };
 		810B3C54203B9AA3005AAA05 /* CreateCategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810B3C53203B9AA3005AAA05 /* CreateCategoryVC.swift */; };
@@ -61,6 +63,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D1C99EF860007720E3A568D /* libPods-Quiz-TimeTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Quiz-TimeTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		10312DDA180C15FC066E90A5 /* Pods-Quiz-TimeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quiz-TimeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Quiz-TimeTests/Pods-Quiz-TimeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		508104F7EDDCE49952002E09 /* libPods-Quiz-TimeUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Quiz-TimeUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		57C80766E20132807C3B8998 /* Pods-Quiz-Time.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quiz-Time.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Quiz-Time/Pods-Quiz-Time.debug.xcconfig"; sourceTree = "<group>"; };
 		810B3C4F203B99A8005AAA05 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		810B3C51203B9A99005AAA05 /* QuizVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizVC.swift; sourceTree = "<group>"; };
@@ -101,8 +106,11 @@
 		81CF54F22037B351009A4AD7 /* CreateAccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountVC.swift; sourceTree = "<group>"; };
 		81CF54F42037B364009A4AD7 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		81CF54F62037B396009A4AD7 /* CreateAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountView.swift; sourceTree = "<group>"; };
+		828454B437A8DAED3C56F7B5 /* Pods-Quiz-TimeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quiz-TimeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Quiz-TimeUITests/Pods-Quiz-TimeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		89A5A402422BF77D4AD1A72D /* Pods-Quiz-Time.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quiz-Time.release.xcconfig"; path = "Pods/Target Support Files/Pods-Quiz-Time/Pods-Quiz-Time.release.xcconfig"; sourceTree = "<group>"; };
+		B7B2FC2977C7ADA3ACE69166 /* Pods-Quiz-TimeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quiz-TimeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Quiz-TimeTests/Pods-Quiz-TimeTests.release.xcconfig"; sourceTree = "<group>"; };
 		DB7B5ED83EE01EED3FF5719C /* Pods_Quiz_Time.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Quiz_Time.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EBB9D2EBB251C4F83D574E46 /* Pods-Quiz-TimeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quiz-TimeUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Quiz-TimeUITests/Pods-Quiz-TimeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +118,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F241B3DB0039B1F94DC207D /* libPods-Quiz-TimeUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,6 +126,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35D950D01E1C12B065B57682 /* libPods-Quiz-TimeTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,6 +146,10 @@
 			children = (
 				57C80766E20132807C3B8998 /* Pods-Quiz-Time.debug.xcconfig */,
 				89A5A402422BF77D4AD1A72D /* Pods-Quiz-Time.release.xcconfig */,
+				10312DDA180C15FC066E90A5 /* Pods-Quiz-TimeTests.debug.xcconfig */,
+				B7B2FC2977C7ADA3ACE69166 /* Pods-Quiz-TimeTests.release.xcconfig */,
+				EBB9D2EBB251C4F83D574E46 /* Pods-Quiz-TimeUITests.debug.xcconfig */,
+				828454B437A8DAED3C56F7B5 /* Pods-Quiz-TimeUITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -264,6 +278,8 @@
 			isa = PBXGroup;
 			children = (
 				DB7B5ED83EE01EED3FF5719C /* Pods_Quiz_Time.framework */,
+				0D1C99EF860007720E3A568D /* libPods-Quiz-TimeTests.a */,
+				508104F7EDDCE49952002E09 /* libPods-Quiz-TimeUITests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -275,9 +291,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 810B3C7D203C0069005AAA05 /* Build configuration list for PBXNativeTarget "Quiz-TimeUITests" */;
 			buildPhases = (
+				3DE1592CEA80A1D46CACB1FD /* [CP] Check Pods Manifest.lock */,
 				810B3C72203C0069005AAA05 /* Sources */,
 				810B3C73203C0069005AAA05 /* Frameworks */,
 				810B3C74203C0069005AAA05 /* Resources */,
+				C1D6619BA130B8A30F4F501E /* [CP] Embed Pods Frameworks */,
+				16E3EDC2383622115458BD95 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -293,9 +312,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 810B3C8B203C007B005AAA05 /* Build configuration list for PBXNativeTarget "Quiz-TimeTests" */;
 			buildPhases = (
+				43A85DC01594046BEE358D20 /* [CP] Check Pods Manifest.lock */,
 				810B3C80203C007B005AAA05 /* Sources */,
 				810B3C81203C007B005AAA05 /* Frameworks */,
 				810B3C82203C007B005AAA05 /* Resources */,
+				281F0A0317D61FC831A5F9A4 /* [CP] Embed Pods Frameworks */,
+				1F0B2CF6AE05E012C07DBF5E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -401,6 +423,87 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		16E3EDC2383622115458BD95 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Quiz-TimeUITests/Pods-Quiz-TimeUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1F0B2CF6AE05E012C07DBF5E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Quiz-TimeTests/Pods-Quiz-TimeTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		281F0A0317D61FC831A5F9A4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Quiz-TimeTests/Pods-Quiz-TimeTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3DE1592CEA80A1D46CACB1FD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Quiz-TimeUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		43A85DC01594046BEE358D20 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Quiz-TimeTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		509073DACBB2766E356323C7 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -409,12 +512,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Quiz-Time/Pods-Quiz-Time-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
-				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher.default-Core/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac-framework/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
-				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library-framework/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb-framework/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -465,6 +568,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Quiz-Time/Pods-Quiz-Time-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C1D6619BA130B8A30F4F501E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Quiz-TimeUITests/Pods-Quiz-TimeUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -550,6 +668,7 @@
 /* Begin XCBuildConfiguration section */
 		810B3C7E203C0069005AAA05 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EBB9D2EBB251C4F83D574E46 /* Pods-Quiz-TimeUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M6644XK36Y;
@@ -565,6 +684,7 @@
 		};
 		810B3C7F203C0069005AAA05 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 828454B437A8DAED3C56F7B5 /* Pods-Quiz-TimeUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M6644XK36Y;
@@ -580,6 +700,7 @@
 		};
 		810B3C8C203C007B005AAA05 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 10312DDA180C15FC066E90A5 /* Pods-Quiz-TimeTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -596,6 +717,7 @@
 		};
 		810B3C8D203C007B005AAA05 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B7B2FC2977C7ADA3ACE69166 /* Pods-Quiz-TimeTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;

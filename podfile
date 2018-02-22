@@ -7,9 +7,24 @@ target 'Quiz-Time' do
   # Pods for Quiz-Time
 	pod 'Firebase/Core'
 	pod 'Firebase/Auth'
-    pod 'Firebase/Database'
+	pod 'Firebase/Database'
 	pod 'SnapKit'
 	pod 'GoogleSignIn'
-    pod 'SVProgressHUD'
+   	pod 'SVProgressHUD'
 
+end
+
+target 'Quiz-TimeTests' do
+ 	inherit! :search_paths
+    # Pods for testing
+    pod 'Firebase/Core'
+    pod 'Firebase/Auth'
+    pod 'Firebase/Database'
+end
+
+target 'Quiz-TimeUITests' do
+	inherit! :search_paths
+    pod 'Firebase/Core'
+    pod 'Firebase/Auth'
+    pod 'Firebase/Database'
 end
