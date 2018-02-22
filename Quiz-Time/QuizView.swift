@@ -11,7 +11,7 @@ import SnapKit
 
 class QuizView: UIView {
     
-    lazy var numberOfCardsLabel: UILabel = {
+     public lazy var numberOfCardsLabel: UILabel = {
         let label = UILabel()
         label.text = "Number Of Cards:"
         label.textColor = UIColor.lightPurple
@@ -19,7 +19,7 @@ class QuizView: UIView {
         return label
     }()
     
-    lazy var cardCountLabel: UILabel = {
+    public lazy var cardCountLabel: UILabel = {
         let label = UILabel()
         label.text = " "
         label.textColor = UIColor.lightPurple
@@ -29,7 +29,7 @@ class QuizView: UIView {
         return label
     }()
     
-    lazy var cardLabelStackView: UIStackView = {
+    public lazy var cardLabelStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [numberOfCardsLabel, cardCountLabel])
         stackView.spacing = 5
         stackView.distribution = .fill
@@ -37,7 +37,7 @@ class QuizView: UIView {
         return stackView
     }()
     
-    lazy var scoreLabel: UILabel = {
+    public lazy var scoreLabel: UILabel = {
         let label = UILabel()
         label.text = "Score:"
         label.textColor = UIColor.lightPurple
@@ -45,7 +45,7 @@ class QuizView: UIView {
         return label
     }()
     
-    lazy var scoreCountLabel: UILabel = {
+    public lazy var scoreCountLabel: UILabel = {
         let label = UILabel()
         label.text = " "
         label.textColor = UIColor.lightPurple
@@ -55,7 +55,7 @@ class QuizView: UIView {
         return label
     }()
     
-    lazy var scoreLabelStackView: UIStackView = {
+    public lazy var scoreLabelStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [scoreLabel, scoreCountLabel])
         stackView.spacing = 5
         stackView.distribution = .fill
@@ -63,25 +63,26 @@ class QuizView: UIView {
         return stackView
     }()
     
-    lazy var rightButton: UIButton = {
+    public lazy var rightButton: UIButton = {
         let button = UIButton()
         let image = UIImage(named: "rightIcon")?.withRenderingMode(.alwaysOriginal)
         button.setImage(image, for: .normal)
         return button
     }()
     
-    lazy var wrongButton: UIButton = {
+    public lazy var wrongButton: UIButton = {
         let button = UIButton()
         let image = UIImage(named: "wrongIcon")?.withRenderingMode(.alwaysOriginal)
         button.setImage(image, for: .normal)
         return button
     }()
     
-    lazy var cardCollectionView: UICollectionView = {
+    public lazy var cardCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         let collectionView = UICollectionView(frame: UIScreen.main.bounds, collectionViewLayout: layout)
         collectionView.isPagingEnabled = true
+        collectionView.showsHorizontalScrollIndicator = false
         collectionView.register(CardCollectionViewCell.self, forCellWithReuseIdentifier: "cardCell")
         collectionView.backgroundColor = .white
         return collectionView

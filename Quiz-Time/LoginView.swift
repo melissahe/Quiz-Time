@@ -12,7 +12,7 @@ import GoogleSignIn
 
 class LoginView: UIView {
 
-    lazy var appTitleLabel: UILabel = {
+    public lazy var appTitleLabel: UILabel = {
         let label = UILabel()
         label.text = "Quiz Time"
         label.font = UIFont(name: "Chalkduster", size: 48)
@@ -23,7 +23,7 @@ class LoginView: UIView {
         return label
     }()
     
-    lazy var emailLabel: UILabel = {
+    public lazy var emailLabel: UILabel = {
         let label = UILabel()
         label.text = "Email:"
         label.textAlignment = .left
@@ -34,14 +34,14 @@ class LoginView: UIView {
         return label
     }()
     
-    lazy var emailTextField: UITextField = {
+    public lazy var emailTextField: UITextField = {
         let textField = UITextField()
         textField.borderStyle = .roundedRect
         textField.placeholder = "Email..."
         return textField
     }()
     
-    lazy var passwordLabel: UILabel = {
+    public lazy var passwordLabel: UILabel = {
         let label = UILabel()
         label.text = "Password:"
         label.textAlignment = .left
@@ -52,7 +52,7 @@ class LoginView: UIView {
         return label
     }()
     
-    lazy var passwordTextField: UITextField = {
+    public lazy var passwordTextField: UITextField = {
         let textField = UITextField()
         textField.borderStyle = .roundedRect
         textField.placeholder = "Password..."
@@ -60,7 +60,7 @@ class LoginView: UIView {
         return textField
     }()
     
-    lazy var emailStackView: UIStackView = {
+    public lazy var emailStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [emailLabel, emailTextField])
         stackView.alignment = .fill
         stackView.axis = .horizontal
@@ -69,7 +69,7 @@ class LoginView: UIView {
         return stackView
     }()
     
-    lazy var passwordStackView: UIStackView = {
+    public lazy var passwordStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [passwordLabel, passwordTextField])
         stackView.alignment = .fill
         stackView.axis = .horizontal
@@ -78,21 +78,21 @@ class LoginView: UIView {
         return stackView
     }()
     
-    lazy var loginButton: UIButton = {
+    public lazy var loginButton: UIButton = {
         let button = UIButton()
         button.setTitle("Login", for: .normal)
         button.setTitleColor(UIColor.buttonBlue, for: .normal)
         return button
     }()
     
-    lazy var createButton: UIButton = {
+    public lazy var createButton: UIButton = {
         let button = UIButton()
         button.setTitle("Create Account", for: .normal)
         button.setTitleColor(UIColor.buttonBlue, for: .normal)
         return button
     }()
     
-    lazy var googleSignInButton: GIDSignInButton = {
+    public lazy var googleSignInButton: GIDSignInButton = {
         let button = GIDSignInButton()
         button.colorScheme = .light
         button.style = GIDSignInButtonStyle.wide

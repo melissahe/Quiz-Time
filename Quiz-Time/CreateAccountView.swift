@@ -11,13 +11,13 @@ import SnapKit
 
 class CreateAccountView: UIView {
 
-    lazy var dismissButton: UIButton = {
+    public lazy var dismissButton: UIButton = {
         let button = UIButton()
         button.setImage(#imageLiteral(resourceName: "dismissButtonIcon"), for: .normal)
         return button
     }()
     
-    lazy var titleLabel: UILabel = {
+    public lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Create Account"
         label.font = UIFont(name: "Chalkduster", size: 40)
@@ -28,7 +28,7 @@ class CreateAccountView: UIView {
         return label
     }()
     
-    lazy var emailLabel: UILabel = {
+    public lazy var emailLabel: UILabel = {
         let label = UILabel()
         label.text = "Email:"
         label.textAlignment = .left
@@ -39,14 +39,14 @@ class CreateAccountView: UIView {
         return label
     }()
     
-    lazy var emailTextField: UITextField = {
+    public lazy var emailTextField: UITextField = {
         let textField = UITextField()
         textField.borderStyle = .roundedRect
         textField.placeholder = "Email..."
         return textField
     }()
     
-    lazy var passwordLabel: UILabel = {
+    public lazy var passwordLabel: UILabel = {
         let label = UILabel()
         label.text = "Password:"
         label.textAlignment = .left
@@ -57,7 +57,7 @@ class CreateAccountView: UIView {
         return label
     }()
     
-    lazy var passwordTextField: UITextField = {
+    public lazy var passwordTextField: UITextField = {
         let textField = UITextField()
         textField.borderStyle = .roundedRect
         textField.placeholder = "Password..."
@@ -65,7 +65,7 @@ class CreateAccountView: UIView {
         return textField
     }()
     
-    lazy var emailStackView: UIStackView = {
+    public lazy var emailStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [emailLabel, emailTextField])
         stackView.alignment = .fill
         stackView.axis = .horizontal
@@ -74,7 +74,7 @@ class CreateAccountView: UIView {
         return stackView
     }()
     
-    lazy var passwordStackView: UIStackView = {
+    public lazy var passwordStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [passwordLabel, passwordTextField])
         stackView.alignment = .fill
         stackView.axis = .horizontal
@@ -83,7 +83,7 @@ class CreateAccountView: UIView {
         return stackView
     }()
     
-    lazy var createButton: UIButton = {
+    public lazy var createButton: UIButton = {
         let button = UIButton()
         button.setTitle("Create Account", for: .normal)
         button.setTitleColor(UIColor.buttonBlue, for: .normal)

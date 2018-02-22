@@ -10,12 +10,12 @@ import UIKit
 
 class CreateFlashCardView: UIScrollView {
 
-    lazy var contentView: UIView = {
+    public lazy var contentView: UIView = {
         let view = UIView()
         return view
     }()
     
-    lazy var titleLabel: UILabel = {
+    public lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Add A Flashcard"
         label.font = UIFont(name: "Chalkduster", size: 30)
@@ -26,7 +26,7 @@ class CreateFlashCardView: UIScrollView {
         return label
     }()
     
-    lazy var categoryLabel: UILabel = {
+    public lazy var categoryLabel: UILabel = {
         let label = UILabel()
         label.text = "Category:"
         label.textColor = .lightPurple
@@ -36,7 +36,7 @@ class CreateFlashCardView: UIScrollView {
         return label
     }()
     
-    lazy var categoryListButton: UIButton = {
+    public lazy var categoryListButton: UIButton = {
         let button = UIButton()
         button.setTitle("Pick A Category", for: .normal)
         button.setTitleColor(UIColor.buttonBlue, for: .normal)
@@ -44,7 +44,7 @@ class CreateFlashCardView: UIScrollView {
         return button
     }()
     
-    lazy var categoryTableView: UITableView = {
+    public lazy var categoryTableView: UITableView = {
         let tableView = UITableView()
         tableView.register(CategoryTableViewCell.self, forCellReuseIdentifier: "categoryCell")
         tableView.isHidden = true
@@ -52,7 +52,7 @@ class CreateFlashCardView: UIScrollView {
         return tableView
     }()
     
-    lazy var questionLabel: UILabel = {
+    public lazy var questionLabel: UILabel = {
         let label = UILabel()
         label.text = "Question:"
         label.textColor = .lightPurple
@@ -62,7 +62,7 @@ class CreateFlashCardView: UIScrollView {
         return label
     }()
     
-    lazy var questionTextField: UITextField = {
+    public lazy var questionTextField: UITextField = {
         let textField = UITextField()
         textField.borderStyle = .bezel
         textField.placeholder = "Question here..."
@@ -71,7 +71,7 @@ class CreateFlashCardView: UIScrollView {
         return textField
     }()
     
-    lazy var answerLabel: UILabel = {
+    public lazy var answerLabel: UILabel = {
         let label = UILabel()
         label.text = "Answer:"
         label.textColor = .lightPurple
@@ -81,7 +81,7 @@ class CreateFlashCardView: UIScrollView {
         return label
     }()
     
-    lazy var answerTextView: UITextView = {
+    public lazy var answerTextView: UITextView = {
         let textView = UITextView()
         return textView
     }()

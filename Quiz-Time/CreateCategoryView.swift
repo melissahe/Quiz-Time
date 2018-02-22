@@ -10,7 +10,7 @@ import UIKit
 
 class CreateCategoryView: UIView {
 
-    lazy var categoryLabel: UILabel = {
+    public lazy var categoryLabel: UILabel = {
         let label = UILabel()
         label.text = "Category:"
         label.textColor = .lightPurple
@@ -20,7 +20,7 @@ class CreateCategoryView: UIView {
         return label
     }()
     
-    lazy var categoryTextField: UITextField = {
+    public lazy var categoryTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "Category..."
         textField.borderStyle = .bezel
