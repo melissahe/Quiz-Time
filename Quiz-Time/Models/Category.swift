@@ -9,7 +9,6 @@
 import Foundation
 
 struct Category: Codable, Equatable {
-    
     let name: String
     let userID: String
     
@@ -35,7 +34,7 @@ struct Category: Codable, Equatable {
         self.userID = userID
     }
     
-    func toJSON() -> Any {
+    public func toJSON() -> Any {
         let encoder = JSONEncoder()
         let data = try! encoder.encode(self)
         let json = try! JSONSerialization.jsonObject(with: data, options: [])
