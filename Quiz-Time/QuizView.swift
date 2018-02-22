@@ -157,9 +157,9 @@ class QuizView: UIView {
     private func setUpCardCollectionView() {
         self.addSubview(cardCollectionView)
         cardCollectionView.snp.makeConstraints { (make) in
-            make.top.equalTo(scoreLabelStackView.snp.bottom)
-            make.bottom.equalTo(wrongButton.snp.top)
-            make.leading.trailing.equalTo(self)
+            make.top.equalTo(scoreLabelStackView.snp.bottom).offset(20)
+            make.bottom.equalTo(wrongButton.snp.top).offset(-20)
+            make.leading.trailing.equalTo(self).inset(20)
         }
     }
 }
