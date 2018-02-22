@@ -33,6 +33,15 @@ class HomeVC: UIViewController {
         setUpViews()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        databaseService.getAllCategories(fromUserID: currentUserID) { (categories) in
+            if let categories = categories {
+                self.categories = categories
+            }
+        }
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         homeView.categoryTableView.isHidden = true
@@ -43,12 +52,6 @@ class HomeVC: UIViewController {
         
         homeView.categoryTableView.delegate = self
         homeView.categoryTableView.dataSource = self
-        
-        databaseService.getAllCategories(fromUserID: currentUserID) { (categories) in
-            if let categories = categories {
-                self.categories = categories
-            }
-        }
         
         homeView.categoryListButton.addTarget(self, action: #selector(categoryListButtonPressed), for: .touchUpInside)
         homeView.quizButton.addTarget(self, action: #selector(quizButtonPressed), for: .touchUpInside)
@@ -98,7 +101,7 @@ class HomeVC: UIViewController {
     }
     
     @objc private func addCategoryButtonPressed() {
-        let createCategoryVC = CreateCategoryVC(categories: self.categories)
+        let createCategoryVC = CreateCategoryVC()
         let navVC = UINavigationController(rootViewController: createCategoryVC)
         self.present(navVC, animated: true, completion: nil)
     }
