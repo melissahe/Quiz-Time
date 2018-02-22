@@ -20,7 +20,7 @@ extension CreateFlashCardVC: DatabaseServiceDelegate {
     }
     func didFailAddingFlashcard(_ databaseService: DatabaseService, errorMessage: String) {
         SVProgressHUD.dismiss()
-        let errorAlert = Alert.createErrorAlert(withMessage: "Couldn't add the flashcard!! Please check your internet connection smh.", andCompletion: nil)
+        let errorAlert = Alert.createErrorAlert(withMessage: "Couldn't add the flashcard!!\nPlease check your internet connection smh.\n\(errorMessage)", andCompletion: nil)
         self.present(errorAlert, animated: true, completion: nil)
     }
 }
