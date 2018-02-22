@@ -148,10 +148,32 @@ class QuizVC: UIViewController {
 
 extension QuizVC: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //to do - animate flip, switch to answer or question
+        //animate flip
         let currentFlashcard = flashcards[indexPath.row]
-        let cell = collectionView.cellForItem(at: indexPath)
-        
+        guard let cell = collectionView.cellForItem(at: indexPath) as? CardCollectionViewCell else {
+            print("Couldn't get cell")
+            return
+        }
+        let animation = CABasicAnimation(keyPath: "transform.rotation.y")
+        animation.fromValue = 0
+        animation.toValue = CGFloat.pi / 2
+        animation.duration = 0.15
+        cell.layer.add(animation, forKey: nil)
+        //Completion block for all CAAnimations
+        CATransaction.setCompletionBlock {
+            switch cell.cardType {
+            case .question:
+                cell.textLabel.text = currentFlashcard.answer
+                cell.cardType = .answer
+            case .answer:
+                cell.textLabel.text = currentFlashcard.question
+                cell.cardType = .question
+            }
+            animation.fromValue = CGFloat.pi / 2
+            animation.toValue = 0
+            animation.duration = 0.15
+            cell.layer.add(animation, forKey: nil)
+        }
     }
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         currentRow = indexPath.row
