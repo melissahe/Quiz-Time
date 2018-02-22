@@ -10,13 +10,28 @@ import UIKit
 import SnapKit
 
 class CardCollectionViewCell: UICollectionViewCell {
-
-    lazy var textLabel: UILabel = {
+    public enum CardType {
+        case question
+        case answer
+    }
+    
+    public var cardType: CardType = .question
+    
+    public lazy var textLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: "Georgia", size: 20)
-        label.textColor = UIColor.pinkPurple
+        label.textColor = UIColor.plum
         label.numberOfLines = 0
         label.textAlignment = .center
+        return label
+    }()
+    
+    public lazy var pageLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont(name: "Georgia", size: 16)
+        label.textColor = UIColor.plum
+        label.numberOfLines = 0
+        label.textAlignment = .right
         return label
     }()
     
@@ -33,19 +48,27 @@ class CardCollectionViewCell: UICollectionViewCell {
         backgroundColor = .white
         contentView.layer.masksToBounds = true
         contentView.layer.cornerRadius = 10
-        contentView.layer.borderColor = UIColor.pinkPurple.cgColor
+        contentView.layer.borderColor = UIColor.plum.cgColor
         contentView.layer.borderWidth = 1.0
         setUpViews()
     }
     
     private func setUpViews() {
         setUpTextLabel()
+        setUpPageLabel()
     }
     
     private func setUpTextLabel() {
         contentView.addSubview(textLabel)
         textLabel.snp.makeConstraints { (make) in
-            make.edges.equalTo(contentView).inset(5)
+            make.edges.equalTo(contentView).inset(10)
+        }
+    }
+    
+    private func setUpPageLabel() {
+        contentView.addSubview(pageLabel)
+        pageLabel.snp.makeConstraints { (make) in
+            make.trailing.bottom.equalTo(contentView).offset(-10)
         }
     }
 }
