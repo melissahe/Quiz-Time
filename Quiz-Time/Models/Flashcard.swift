@@ -9,11 +9,17 @@
 import Foundation
 
 struct Flashcard: Codable {
+    public enum Score: String, Codable {
+        case right
+        case wrong
+        case unanswered
+    }
+    
     let question: String
     let answer: String
     let category: String
     var flashcardID: String = "tbd"
-    var score: Int = 0
+    var score: Score = .unanswered
     let userID: String
     var timestamp: Double = Date.timeIntervalSinceReferenceDate
     
@@ -57,7 +63,7 @@ struct Flashcard: Codable {
         self.timestamp = timestamp
     }
     
-    func toJSON() -> Any {
+    public func toJSON() -> Any {
         let encoder = JSONEncoder()
         let data = try! encoder.encode(self)
         let json = try! JSONSerialization.jsonObject(with: data, options: [])
