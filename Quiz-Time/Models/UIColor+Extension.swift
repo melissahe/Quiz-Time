@@ -11,4 +11,5 @@ import UIKit
 extension UIColor {
     public static var lightPurple = UIColor(red: 0.72, green: 0.71, blue: 0.98, alpha: 1)
     public static var buttonBlue = UIColor(red: 0.35, green: 0.71, blue: 0.98, alpha: 1)
+    public static var pinkPurple = UIColor(red: 0.73, green: 0.32, blue: 0.69, alpha: 1)
 }
