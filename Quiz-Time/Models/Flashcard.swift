@@ -10,8 +10,7 @@ import Foundation
 
 struct Flashcard: Codable {
     public enum Score: String, Codable {
-        case right
-        case wrong
+        case answered
         case unanswered
     }
     
