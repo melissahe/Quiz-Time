@@ -79,10 +79,15 @@ class CreateFlashCardVC: UIViewController {
     
     @objc private func scrollViewTapped() {
         self.view.endEditing(true)
+        createFlashCardView.categoryTableView.isHidden = true
     }
     
     @objc private func categoryListButtonPressed() {
-        createFlashCardView.categoryTableView.isHidden = false
+        if createFlashCardView.categoryTableView.isHidden {
+            createFlashCardView.categoryTableView.isHidden = false
+        } else {
+            createFlashCardView.categoryTableView.isHidden = true
+        }
     }
     
     @objc private func keyboardWillShow(sender: Notification) {
@@ -98,7 +103,7 @@ class CreateFlashCardVC: UIViewController {
         let keyboardSize = keyboardRect.size
         let contentInset = createFlashCardView.contentInset
         
-        createFlashCardView.contentInset = UIEdgeInsets(top: contentInset.top, left: contentInset.left, bottom: contentInset.bottom + keyboardSize.height, right: contentInset.right)
+        createFlashCardView.contentInset = UIEdgeInsets(top: contentInset.top, left: contentInset.left, bottom: contentInset.bottom + (keyboardSize.height * 0.90), right: contentInset.right)
         createFlashCardView.scrollIndicatorInsets = createFlashCardView.contentInset
         createFlashCardView.setContentOffset(CGPoint(x: 0, y: keyboardSize.height / 2), animated: true)
         
@@ -118,7 +123,7 @@ class CreateFlashCardVC: UIViewController {
         let keyboardSize = keyboardRect.size
         let contentInset = createFlashCardView.contentInset
         
-        createFlashCardView.contentInset = UIEdgeInsets(top: contentInset.top, left: contentInset.left, bottom: contentInset.bottom - keyboardSize.height, right: contentInset.right)
+        createFlashCardView.contentInset = UIEdgeInsets(top: contentInset.top, left: contentInset.left, bottom: contentInset.bottom - (keyboardSize.height * 0.90), right: contentInset.right)
         createFlashCardView.scrollIndicatorInsets = createFlashCardView.contentInset
         keyboardIsShown = false
     }

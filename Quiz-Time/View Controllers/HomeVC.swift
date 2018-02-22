@@ -33,6 +33,11 @@ class HomeVC: UIViewController {
         setUpViews()
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        homeView.categoryTableView.isHidden = true
+    }
+    
     private func setUpViews() {
         self.view.addSubview(homeView)
         
@@ -67,7 +72,11 @@ class HomeVC: UIViewController {
     }
     
     @objc private func categoryListButtonPressed() {
-        homeView.categoryTableView.isHidden = false
+        if homeView.categoryTableView.isHidden {
+            homeView.categoryTableView.isHidden = false
+        } else {
+            homeView.categoryTableView.isHidden = true
+        }
     }
     
     @objc private func quizButtonPressed() {

@@ -43,6 +43,7 @@ class HomeView: UIView {
         let tableView = UITableView()
         tableView.register(CategoryTableViewCell.self, forCellReuseIdentifier: "categoryCell")
         tableView.isHidden = true
+        tableView.backgroundColor = .white
         return tableView
     }()
     
@@ -79,14 +80,13 @@ class HomeView: UIView {
         setUpTitleLabel()
         setUpCategoryLabel()
         setUpCategoryListButton()
-        setUpCategoryTableView()
         setUpQuizButton()
         setUpAddCategoryButton()
+        setUpCategoryTableView()
     }
     
     private func setUpTitleLabel() {
         self.addSubview(titleLabel)
-        
         titleLabel.snp.makeConstraints { (make) in
             make.top.equalTo(self.safeAreaLayoutGuide.snp.top).offset(20)
             make.leading.trailing.equalTo(self).inset(40)
@@ -95,7 +95,6 @@ class HomeView: UIView {
     
     private func setUpCategoryLabel() {
         self.addSubview(categoryLabel)
-        
         categoryLabel.snp.makeConstraints { (make) in
             make.top.equalTo(titleLabel.snp.bottom).offset(40)
             make.leading.equalTo(self).offset(20)
@@ -104,13 +103,11 @@ class HomeView: UIView {
     
     private func setUpCategoryListButton() {
         self.addSubview(categoryListButton)
-        
         categoryListButton.snp.makeConstraints { (make) in
             make.leading.equalTo(categoryLabel.snp.trailing).offset(5)
             make.centerY.equalTo(categoryLabel.snp.centerY)
             make.trailing.equalTo(self).offset(-20)
         }
-        
         categoryListButton.layer.masksToBounds = true
         categoryListButton.layer.borderWidth = 1.0
         categoryListButton.layer.borderColor = UIColor.lightPurple.cgColor
@@ -118,22 +115,24 @@ class HomeView: UIView {
     
     private func setUpCategoryTableView() {
         self.addSubview(categoryTableView)
-        
         categoryTableView.snp.makeConstraints { (make) in
-            make.height.width.equalTo(categoryListButton)
-            make.center.equalTo(categoryListButton)
+            make.width.equalTo(categoryListButton)
+            make.top.equalTo(categoryListButton.snp.bottom)
+            make.centerX.equalTo(categoryListButton.snp.centerX)
+            make.height.equalTo(self.snp.height).multipliedBy(0.30)
         }
+        categoryTableView.layer.masksToBounds = true
+        categoryTableView.layer.borderWidth = 1
+        categoryTableView.layer.borderColor = UIColor.lightPurple.cgColor
     }
     
     private func setUpQuizButton() {
         self.addSubview(quizButton)
-        
         quizButton.snp.makeConstraints { (make) in
             make.top.equalTo(categoryLabel.snp.bottom).offset(40)
             make.centerX.equalTo(self.snp.centerX)
             make.width.equalTo(self.snp.width).multipliedBy(0.30)
         }
-        
         quizButton.layer.masksToBounds = true
         quizButton.layer.cornerRadius = 10
         quizButton.layer.borderWidth = 1
@@ -142,13 +141,11 @@ class HomeView: UIView {
     
     private func setUpAddCategoryButton() {
         self.addSubview(addCategoryButton)
-        
         addCategoryButton.snp.makeConstraints { (make) in
             make.bottom.equalTo(self.safeAreaLayoutGuide.snp.bottom).offset(-150)
             make.centerX.equalTo(quizButton.snp.centerX)
             make.width.equalTo(self).multipliedBy(0.50)
         }
-        
         addCategoryButton.layer.masksToBounds = true
         addCategoryButton.layer.cornerRadius = 10
         addCategoryButton.layer.borderColor = UIColor.lightPurple.cgColor

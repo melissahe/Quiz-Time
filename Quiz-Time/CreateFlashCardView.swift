@@ -48,6 +48,7 @@ class CreateFlashCardView: UIScrollView {
         let tableView = UITableView()
         tableView.register(CategoryTableViewCell.self, forCellReuseIdentifier: "categoryCell")
         tableView.isHidden = true
+        tableView.backgroundColor = .white
         return tableView
     }()
     
@@ -106,11 +107,11 @@ class CreateFlashCardView: UIScrollView {
         setUpTitleLabel()
         setUpCategoryLabel()
         setUpCategoryListButton()
-        setUpCategoryTableView()
         setUpQuestionLabel()
         setUpQuestionTextField()
         setUpAnswerLabel()
         setUpAnswerTextView()
+        setUpCategoryTableView()
     }
     
     private func setUpContentView() {
@@ -124,31 +125,27 @@ class CreateFlashCardView: UIScrollView {
     
     private func setUpTitleLabel() {
         contentView.addSubview(titleLabel)
-        
         titleLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(contentView.safeAreaLayoutGuide.snp.top).offset(20)
+            make.top.equalTo(contentView.safeAreaLayoutGuide.snp.top).offset(10)
             make.leading.trailing.equalTo(contentView).inset(40)
         }
     }
     
     private func setUpCategoryLabel() {
         contentView.addSubview(categoryLabel)
-        
         categoryLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(titleLabel.snp.bottom).offset(20)
+            make.top.equalTo(titleLabel.snp.bottom).offset(10)
             make.leading.equalTo(contentView).offset(20)
         }
     }
     
     private func setUpCategoryListButton() {
         contentView.addSubview(categoryListButton)
-        
         categoryListButton.snp.makeConstraints { (make) in
             make.leading.equalTo(categoryLabel.snp.trailing).offset(5)
             make.centerY.equalTo(categoryLabel.snp.centerY)
             make.trailing.equalTo(contentView).offset(-20)
         }
-        
         categoryListButton.layer.masksToBounds = true
         categoryListButton.layer.borderWidth = 1.0
         categoryListButton.layer.borderColor = UIColor.lightPurple.cgColor
@@ -156,16 +153,19 @@ class CreateFlashCardView: UIScrollView {
     
     private func setUpCategoryTableView() {
         contentView.addSubview(categoryTableView)
-        
         categoryTableView.snp.makeConstraints { (make) in
-            make.height.width.equalTo(categoryListButton)
-            make.center.equalTo(categoryListButton)
+            make.width.equalTo(categoryListButton)
+            make.top.equalTo(categoryListButton.snp.bottom)
+            make.centerX.equalTo(categoryListButton.snp.centerX)
+            make.height.equalTo(contentView.snp.height).multipliedBy(0.30)
         }
+        categoryTableView.layer.masksToBounds = true
+        categoryTableView.layer.borderWidth = 1
+        categoryTableView.layer.borderColor = UIColor.lightPurple.cgColor
     }
     
     private func setUpQuestionLabel() {
         contentView.addSubview(questionLabel)
-        
         questionLabel.snp.makeConstraints { (make) in
             make.top.equalTo(categoryLabel.snp.bottom).offset(10)
             make.leading.equalTo(contentView).offset(20)
@@ -174,7 +174,6 @@ class CreateFlashCardView: UIScrollView {
     
     private func setUpQuestionTextField() {
         contentView.addSubview(questionTextField)
-        
         questionTextField.snp.makeConstraints { (make) in
             make.leading.equalTo(questionLabel.snp.trailing).offset(5)
             make.trailing.equalTo(contentView).offset(-20)
@@ -184,7 +183,6 @@ class CreateFlashCardView: UIScrollView {
     
     private func setUpAnswerLabel() {
         contentView.addSubview(answerLabel)
-        
         answerLabel.snp.makeConstraints { (make) in
             make.top.equalTo(questionLabel.snp.bottom).offset(10)
             make.leading.equalTo(questionLabel.snp.leading)
@@ -193,14 +191,12 @@ class CreateFlashCardView: UIScrollView {
     
     private func setUpAnswerTextView() {
         contentView.addSubview(answerTextView)
-        
         answerTextView.snp.makeConstraints { (make) in
             make.top.equalTo(answerLabel.snp.bottom).offset(10)
             make.leading.trailing.equalTo(contentView).inset(20)
             make.height.lessThanOrEqualTo(contentView).multipliedBy(0.40)
             make.bottom.equalTo(contentView).offset(-40)
         }
-        
         answerTextView.layer.masksToBounds = true
         answerTextView.layer.cornerRadius = 10
         answerTextView.layer.borderWidth = 1
