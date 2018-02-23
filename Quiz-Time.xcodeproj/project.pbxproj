@@ -172,6 +172,34 @@
 			path = "Quiz-TimeTests";
 			sourceTree = "<group>";
 		};
+		812ACC7D2040C4760055129F /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				81389600203B5C9A003D8F2E /* AuthUserService.swift */,
+				81389602203B5D0E003D8F2E /* AuthUserServiceDelegate.swift */,
+				810B3C5D203BD641005AAA05 /* DatabaseService.swift */,
+				810B3C5F203BD64B005AAA05 /* DatabaseServiceDelegate.swift */,
+				810B3C6B203BFB00005AAA05 /* DatabaseService+Get.swift */,
+				810B3C61203BD8DA005AAA05 /* DatabaseService+Add.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		812ACC7E2040C5810055129F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				81CF54F42037B364009A4AD7 /* LoginView.swift */,
+				81CF54F62037B396009A4AD7 /* CreateAccountView.swift */,
+				810B3C63203BDC5D005AAA05 /* HomeView.swift */,
+				810B3C65203BDC66005AAA05 /* QuizView.swift */,
+				810B3C67203BDC70005AAA05 /* CreateCategoryView.swift */,
+				810B3C69203BDC7D005AAA05 /* CreateFlashCardView.swift */,
+				810B3C8E203C0307005AAA05 /* CategoryTableViewCell.swift */,
+				81C3C105203E8D4A00A92289 /* CardCollectionViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		81CF54C820379B31009A4AD7 = {
 			isa = PBXGroup;
 			children = (
@@ -198,7 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				81CF54EF2037B2F1009A4AD7 /* Models */,
-				81CF54ED2037B2E5009A4AD7 /* Views */,
+				812ACC7E2040C5810055129F /* Views */,
 				81CF54EC2037B2DC009A4AD7 /* View Controllers */,
 				81CF54EB2037B2BD009A4AD7 /* Supporting Files */,
 				81CF54E92037B26A009A4AD7 /* GoogleService-Info.plist */,
@@ -233,39 +261,10 @@
 			path = "View Controllers";
 			sourceTree = "<group>";
 		};
-		81CF54ED2037B2E5009A4AD7 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				81CF54F42037B364009A4AD7 /* LoginView.swift */,
-				81CF54F62037B396009A4AD7 /* CreateAccountView.swift */,
-				810B3C63203BDC5D005AAA05 /* HomeView.swift */,
-				810B3C65203BDC66005AAA05 /* QuizView.swift */,
-				810B3C67203BDC70005AAA05 /* CreateCategoryView.swift */,
-				810B3C69203BDC7D005AAA05 /* CreateFlashCardView.swift */,
-				810B3C8E203C0307005AAA05 /* CategoryTableViewCell.swift */,
-				81C3C105203E8D4A00A92289 /* CardCollectionViewCell.swift */,
-			);
-			name = Views;
-			sourceTree = "<group>";
-		};
-		81CF54EE2037B2EB009A4AD7 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				81389600203B5C9A003D8F2E /* AuthUserService.swift */,
-				81389602203B5D0E003D8F2E /* AuthUserServiceDelegate.swift */,
-				810B3C5D203BD641005AAA05 /* DatabaseService.swift */,
-				810B3C5F203BD64B005AAA05 /* DatabaseServiceDelegate.swift */,
-				810B3C6B203BFB00005AAA05 /* DatabaseService+Get.swift */,
-				810B3C61203BD8DA005AAA05 /* DatabaseService+Add.swift */,
-			);
-			name = Services;
-			path = ..;
-			sourceTree = "<group>";
-		};
 		81CF54EF2037B2F1009A4AD7 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				81CF54EE2037B2EB009A4AD7 /* Services */,
+				812ACC7D2040C4760055129F /* Services */,
 				81389604203B5DB7003D8F2E /* Alert.swift */,
 				81389606203B7DB8003D8F2E /* UIColor+Extension.swift */,
 				810B3C59203BCEE1005AAA05 /* Flashcard.swift */,
